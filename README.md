@@ -1,4 +1,4 @@
-# What is happiness? \ˈha-pē-nəs\?\ [Happiness Project](https://kwonjo.github.io/algorithms_interactivegraphics/)
+# [Happiness Project](https://kwonjo.github.io/algorithms_interactivegraphics/)
 
 ![Happiness Project](/images/project2.png)
 
@@ -11,10 +11,6 @@ This project defines "happiness" with five happy tracks that I chose from Billbo
 17. "Happy," Pharrell 
 20. "Oh How Happy," Shades Of Blue 
 The lyrics of each song was combined and a text analysis with R was done to find the high frequency words. The top 50 were the followings in the graph. 
-
-![bargraph](/images/top50happy.png)
-
-![wordcloud](/images/Rplot.jpeg)
 
 The total of 201 words were aggregrated and the top 50 keywords were identified and used in this piece. The move of the words are random so the outcomes of the movement will always be different. 
 
