@@ -5,25 +5,12 @@
 ## What is the project about?
 
 This project defines "happiness" with five happy tracks that I chose from Billboard chart's top 20 "happy" tracks. 
-1. “Happy Together,” The Turtles 
-2. “Don’t Worry, Be Happy” from “Cocktail,” Bobby McFerrin 
-8. “Happy Days,” Pratt & McClain with Brother Love 
-17. "Happy," Pharrell 
-20. "Oh How Happy," Shades Of Blue 
-The lyrics of each song was combined and a text analysis with R was done to find the high frequency words. The top 50 were the followings in the graph. 
 
-The total of 201 words were aggregrated and the top 50 keywords were identified and used in this piece. The move of the words are random so the outcomes of the movement will always be different. 
 
 
 ## How did I come up with the idea?
 
-This month I have been obsessed with Joey Pecoraro's song "To be happy." The song only has a short monologue in the beginning and it states how to be happy. 
 
-*"We all know quite a number of people who have everything that it would take to be happy, and they are not happy, because they want something else or they want more of the same.
-And we all know people who have lots of misfortune, and they are deeply happy. They radiate happiness.
-Why? Because they are grateful."*
-
-I wanted to define "happiness" so I looked it up on the dictionary and it stated as "a state of well-being and contentment." This did not seem to be a sufficient definition. In order to define "happiness," some text were required. I went back to think how Pecoraro's song was spreading happiness to people. Music is an essential element in our lives that gives us happiness. Therefore, I wanted to incorporate music lyrics to define "happiness." 
 
 
 ## How was this piece created?

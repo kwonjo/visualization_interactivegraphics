@@ -1,170 +1,77 @@
-//define variables
-var smiley;
-var fontItalic;
-var xoff = 0.0;
-var mySound;
+// An Array of Bubble objects
+var bubbles;
+// A Table object
 var table;
-// var angles = [120, 120, 120];
-// var colors = {fill(253, 122, 131), fill(153, 204, 153) };
 
-//empty array
-var words = []; 
-
-//function preload: image, font, sound, words
 function preload() {
-    //cursor
-    smiley = loadImage('images/smiley.png');
-    //font
-    fontItalic = loadFont('images/typewriter.ttf');
-    //music
-    soundFormats('mp3', 'm4a', 'ogg');
-    mySound = loadSound('images/trim_Tobehappy.m4a');
-    //top 50 words
-    table = loadTable('happyfile/happyfre50.csv', 'csv', 'header');
+  table = loadTable("data/worldhappinessreport100.csv", "header");
 }
 
-function setup(){
-    createCanvas(900, windowHeight);
-    //print words and show in console
-    var tableArray = table.getArray();
-    print(table.getRowCount() + ' total rows in table');
-    print(table.getColumnCount() + ' total columns in table')
-    print(table.getColumn('name'));
+function setup() {
+  createCanvas(900, 900);
+  loadData();
+}
 
-    //cycle through the table
-    for (var r = 0; r < table.getRowCount(); r++)
-     for (var c = 0; c < table.getColumnCount(); c++){
-        print(table.getString(r, c));
+function draw() {
+  background(255);
+  // Display all bubbles
+  for (var i = 0; i < bubbles.length; i++) {
+    bubbles[i].display();
+    bubbles[i].rollover(mouseX, mouseY);
+  }
 
-        //constructor(tempX, tempY, tempWidth, tempHeight, tempShade, tempSpeed, tempText){
-        words[r] = new Word(random(50, 890), random(350, height-50), 500, 500, "pink", 8, tableArray[r][0]);
-        console.log('got the words')
+}
+
+function loadData() {
+  // Load CSV file into a Table object
+  // "header" option indicates the file has a header row
+
+  // The size of the array of Bubble objects is determined by the total number of rows in the CSV
+  bubbles = []; 
+
+  // You can access iterate over all the rows in a table
+  for (var i = 0; i < table.getRowCount(); i++) {
+    var row = table.getRow(i);
+    // You can access the fields via their column name (or index)
+    var x = row.get("x");
+    var y = row.get("y");
+    var d = row.get("diameter");
+    var n = row.get("name");
+    // Make a Bubble object out of the data read
+    bubbles[i] = new Bubble(x, y, d, n);
   }
 }
 
-function draw(){
-    background(0);
+class Bubble {
+  constructor(x, y, diameter, s) {
+    this.x = Number(x);
+    this.y = Number(y);
+    this.diameter = Number(diameter);
+    this.name = s;
+    this.over = false;
+  }
 
-    //cursor
-    imageMode(CENTER);
-    image(smiley, mouseX, mouseY); 
-    //words of the lyrics in the background song
-    textAlign(RIGHT);
-    textFont(fontItalic);
-    strokeWeight(1);
-    textSize(22);
-    fill(140, 109, 211); //#8c6dd3 violet 
-    var s = 'We all know quite a number of people\n who have everything that it would take to be happy\n and they are not happy because they want something else \n or they want more of the same.\n And we all know people who have lots of misfortune,\n and they are deeply happy.\n They radiate happiness.\n Why? Because they are grateful.';   
-    text(s, 300, 10, 600, 400);
-
-    //text to click
-    strokeWeight(3);
-    fill(153, 204, 153); //lettuce green
-    var t = 'Click to be happy'
-    text(t, 450, 350);
-
-    textSize(35);
-    fill(253, 122, 131);
-
-    //move words
-    for (var i = 0; i < 38; i++){
-        words[i].display();
-        words[i].move();
+  // Checking if mouse is over the Bubble
+  rollover(px, py) {
+    var d = dist(px, py, this.x, this.y);
+    if (d < this.diameter/2) {
+      this.over = true;
+    } else {
+      this.over = false;
     }
+  }
 
-    //Shade images: violet
-    var img = createImage(66, 66);
-    img.loadPixels();
-    for(var i = 0; i < img.width; i++){
-        for(var j = 0; j < img.height; j++){
-            img.set(i, j, color(140, 109, 211, (i % img.width) * 2));
-        }
+  // Display the Bubble
+  display() {
+    stroke(0);
+    strokeWeight(2);
+    noFill();
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+    if (this.over) {
+      textAlign(CENTER);
+      noStroke();
+      fill(0);
+      text(this.name, this.x, this.y + this.diameter/2 + 20);
     }
-    img.updatePixels();
-    image(img, 20, 20);
-    image(img, 140, 140);
-    image(img, 260, 260);
-
-    //Shade images: peach
-    var img = createImage(66, 66);
-    img.loadPixels();
-    for(var i = 0; i < img.width; i++){
-        for(var j = 0; j < img.height; j++){
-            img.set(i, j, color(253, 122, 131, (i % img.width) * 2));
-        }
-    }
-    img.updatePixels();
-    image(img, 100, 100);
-    image(img, 220, 220);
-
-    //Shade images: lettuce green
-    var img = createImage(66, 66);
-    img.loadPixels();
-    for(var i = 0; i < img.width; i++){
-        for(var j = 0; j < img.height; j++){
-            img.set(i, j, color(153, 204, 153, (i % img.width) * 2));
-        }
-    }
-    img.updatePixels();
-    image(img, 60, 60);
-    image(img, 180, 180);
-    image(img, 300, 300);
-
-    //piechart
-    // pieChart(100, angles);
- 
-    //Mouse pressed
-    if(mouseIsPressed){
-        //trigger sound
-        mySound.play();
-        mySound.setVolume(0.12);
-
-        //smiley face
-        stroke(153, 204, 153); //lettuce green
-        strokeWeight(3);
-        ellipseMode(CENTER);
-        //change eye color
-        fill(random(255), random(255), random(255));
-        ellipse(100, 230, 10, 10);
-        ellipse(165, 230, 10, 10);
-        noFill(); 
-        arc(130, 280, 100, 120, 0.2, PI - 0.2);
-    }else{
-        noStroke();
-    }
-
-}
-//define class Word
-class Word{ 
-        constructor(tempX, tempY, tempWidth, tempHeight, tempShade, tempSpeed, tempText){
-        this.x = tempX;
-        this.y = tempY;
-        this.w = tempWidth;
-        this.h = tempHeight;
-        this.shade = tempShade;
-        this.speed = tempSpeed;
-        this.text = tempText;
-    }
-
-    //display 
-    display(){
-        text(this.text, this.x, this.y);
-    }
-
-    move(){
-    this.x += random(0,1);
-    this.y += random(-45, 45);
   }
 }
-
-// //piechart
-// function pieChart(diameter, data) {
-//     var lastAngle = 0;
-//     for (var i = 0; i < data.length; i++) {
-//       for (j = 0; j < 3; j++) {
-//         fill(colors)  
-//       }
-//       arc(width/2, height/2, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));
-//       lastAngle += radians(angles[i]);
-//     }
-//   }
