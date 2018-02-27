@@ -1,10 +1,16 @@
 var bubbles;
 var table;
 var fontItalic;
+var mySound;
 
 function preload(){
+  //data
   table = loadTable('data/AIsearch.csv', 'header');
+  //font
   fontItalic = loadFont('images/typewriter.ttf');
+  //music
+  soundFormats('mp3', 'm4a'); 
+  mySound = loadSound('images/themoonsong.m4a');
 }
 
 function setup(){
@@ -23,7 +29,6 @@ function draw(){
   for (var i = 0; i < bubbles.length; i++){
     bubbles[i].display();
   }
-
 }
 
 function loadData(){
@@ -54,11 +59,21 @@ class Bubble{
 // Display the Bubble
 display() {
     stroke(140, 109, 211);
-    noFill();
-    ellipse(this.x, this.y, this.frequency, this.frequency);
+    //fill(253, 122, 131);
+    ellipse(this.x, this.y, (this.frequency)/1000, (this.frequency)/1000);
     textAlign(CENTER);
+    textFont(fontItalic);
+    textSize(20);
     text(this.keyword, this.x, this.y-20);
     text(this.frequency, this.x, this.y+20);
 }
 
+}
+
+function mousePressed(){
+  if (mySound.isPlaying()){ // .isPlaying() returns a boolean
+    mySound.stop();
+  } else {
+    mySound.play();
+  }
 }

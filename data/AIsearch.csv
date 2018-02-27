@@ -1,21 +1,21 @@
-﻿keyword,frequency,intersectionAI
-Artificial Intelligence,"33,054","33,054"
-Cybernatics,"5,024",209
-Neurosciences,"39,258",249
-Machine Intelligence,"8,620","5,124"
-Computational Intelligence,"8,374","3,418"
-Induction Machines,"3,610",16
-Cognitive Sciences,"27,500",646
-Humanoid Robots,"2,772",58
-Human Motion Analysis,601,8
-Natural Language Processing,"16,242",572
-Fuzzy Logic,"40,920","1,555"
-Machine Learning,"84,442","2,588"
-Robotics,"38,274","1,175"
-Imitation,"16,914",81
-Autonomous Robots,"2,377",105
-Affective Computing,"2,368",68
-Learning Theory,"7,983",55
-Intelligent systems,"82,692","4,123"
-Pattern Recognition,"110,678","1,182"
-Neural Networks,"285,679","7,632"
+﻿keyword,frequency,intersectionAI,
+Artificial Intelligence,33054,33054,
+Cybernatics,5024,209,
+Neurosciences,39258,249,
+Machine Intelligence,8620,5124,
+Computational Intelligence,8374,3418,
+Induction Machines,3610,16,
+Cognitive Sciences,27500,646,
+Humanoid Robots,2772,58,
+Human Motion Analysis,601,8,
+Natural Language Processing,16242,572,
+Fuzzy Logic,40920,1555,
+Machine Learning,84442,2588,
+Robotics,38274,1175,
+Imitation,16914,81,
+Autonomous Robots,2377,105,
+Affective Computing,2368,68,
+Learning Theory,7983,55,
+Intelligent systems,82692,4123,
+Pattern Recognition,110678,1182,
+Neural Networks,285679,7632,
