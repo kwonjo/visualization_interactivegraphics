@@ -18,15 +18,15 @@
 ## 2. [The Moon Song from the film *Her* by Spike Jonze (2013)](http://www.imdb.com/title/tt1798709/)
 
 
-*"There's things I wish I knew
+*"There's things I wish I knew*
 
-There's no thing I'd keep from you
+*There's no thing I'd keep from you*
 
-It's a dark and shiny place
+*It's a dark and shiny place*
 
-But with you my dear
+*But with you my dear*
 
-I'm safe and we're a million miles away"*
+*I'm safe and we're a million miles away"*
 
 ## 3. [Color Selection (2018)](https://www.pantone.com/color-of-the-year-2018-tools-for-designers) 
 ![pantone](/images/color2018.png)
