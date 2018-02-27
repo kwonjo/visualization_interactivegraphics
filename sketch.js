@@ -14,8 +14,11 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(900, 900);
+  createCanvas(1200, 900);
+  //data
   loadData();
+  //sound loop on going
+  mySound.loop(); 
   //print words and show in console
   var tableArray = table.getArray();
   print(table.getRowCount() + ' total rows in table');
@@ -43,7 +46,7 @@ function loadData(){
     var frequency = row.get("frequency");
     var intersectionAI = row.get("intersectionAI");
     // Make a Bubble object out of the data read
-    bubbles[i] = new Bubble(random(10, 890), random(10, 890), keyword, frequency, intersectionAI);
+    bubbles[i] = new Bubble(random(100, 1100), random(100, 800), keyword, frequency, intersectionAI);
   }
 }
 
@@ -60,7 +63,7 @@ class Bubble{
 display() {
     stroke(140, 109, 211);
     //fill(253, 122, 131);
-    ellipse(this.x, this.y, (this.frequency)/1000, (this.frequency)/1000);
+    ellipse(this.x, this.y, (this.frequency)/100, (this.intersectionAI)/100);
     textAlign(CENTER);
     textFont(fontItalic);
     textSize(20);
