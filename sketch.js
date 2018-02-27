@@ -1,77 +1,64 @@
-// An Array of Bubble objects
 var bubbles;
-// A Table object
 var table;
+var fontItalic;
 
-function preload() {
-  table = loadTable("data/worldhappinessreport100.csv", "header");
+function preload(){
+  table = loadTable('data/AIsearch.csv', 'header');
+  fontItalic = loadFont('images/typewriter.ttf');
 }
 
-function setup() {
+function setup(){
   createCanvas(900, 900);
   loadData();
+  //print words and show in console
+  var tableArray = table.getArray();
+  print(table.getRowCount() + ' total rows in table');
+  print(table.getColumnCount() + ' total columns in table')
+  print(table.getColumn('name'));
 }
 
-function draw() {
-  background(255);
+function draw(){
+  background(53, 204, 153); //lettuce green
   // Display all bubbles
-  for (var i = 0; i < bubbles.length; i++) {
+  for (var i = 0; i < bubbles.length; i++){
     bubbles[i].display();
-    bubbles[i].rollover(mouseX, mouseY);
   }
 
 }
 
-function loadData() {
-  // Load CSV file into a Table object
-  // "header" option indicates the file has a header row
-
+function loadData(){
   // The size of the array of Bubble objects is determined by the total number of rows in the CSV
   bubbles = []; 
 
   // You can access iterate over all the rows in a table
-  for (var i = 0; i < table.getRowCount(); i++) {
+  for (var i = 0; i < table.getRowCount(); i++){
     var row = table.getRow(i);
     // You can access the fields via their column name (or index)
-    var x = row.get("x");
-    var y = row.get("y");
-    var d = row.get("diameter");
-    var n = row.get("name");
+    var keyword = row.get("keyword");
+    var frequency = row.get("frequency");
+    var intersectionAI = row.get("intersectionAI");
     // Make a Bubble object out of the data read
-    bubbles[i] = new Bubble(x, y, d, n);
+    bubbles[i] = new Bubble(random(10, 890), random(10, 890), keyword, frequency, intersectionAI);
   }
 }
 
-class Bubble {
-  constructor(x, y, diameter, s) {
-    this.x = Number(x);
-    this.y = Number(y);
-    this.diameter = Number(diameter);
-    this.name = s;
-    this.over = false;
-  }
+class Bubble{
+  constructor(tempX, tempY, tempKeyword, tempFrequency, tempIntersectionAI){
+    this.x = tempX;
+    this.y = tempY;
+    this.keyword = String(tempKeyword);
+    this.frequency = Number(tempFrequency);
+    this.intersectionAI = Number(tempIntersectionAI);
+}
 
-  // Checking if mouse is over the Bubble
-  rollover(px, py) {
-    var d = dist(px, py, this.x, this.y);
-    if (d < this.diameter/2) {
-      this.over = true;
-    } else {
-      this.over = false;
-    }
-  }
-
-  // Display the Bubble
-  display() {
-    stroke(0);
-    strokeWeight(2);
+// Display the Bubble
+display() {
+    stroke(140, 109, 211);
     noFill();
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-    if (this.over) {
-      textAlign(CENTER);
-      noStroke();
-      fill(0);
-      text(this.name, this.x, this.y + this.diameter/2 + 20);
-    }
-  }
+    ellipse(this.x, this.y, this.frequency, this.frequency);
+    textAlign(CENTER);
+    text(this.keyword, this.x, this.y-20);
+    text(this.frequency, this.x, this.y+20);
+}
+
 }

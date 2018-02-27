@@ -1,4 +1,4 @@
-jfld# Blog Post 3
+# Blog Post 3 & Task 2 (Storyboard)
 
 ### 1. Flight Patterns by Aaron Koblin
 
@@ -18,3 +18,9 @@ This piece visualizes paths of air traffic over North America. It uses various c
 Flight Quest was created for GE and this interactive tool allows the company to improve estimated flight arrival times. In addition, it attempts to save the costs for airlines to efficient. This piece is similar to Koblin's piece but with a different objective. The objective of this piece is clearly commercial use and less focus on aesthetics. With the objective of finding the best routes, the visualization is clearly showing the airports and how the airplanes are moving around the United States. Although this project is less abstract and less appealing aesthetically, the objective is accomplished. I like how the previous piece and this piece are so similar but so different in some ways. 
 
 ![image2](/images/flightquest1.png)
+
+### 3. Storyboard for Visualization Project
+
+My MA thesis on Artificial Intelligence (AI) and I am aiming to define AI by first subcategorizing the topics and ideas related to AI. I would like the user to interact with the different concepts by having some control over the texts. 
+
+![storyboard](/images/task2_storyboard.jpeg)
