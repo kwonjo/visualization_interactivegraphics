@@ -1,82 +1,67 @@
-var bubbles;
-var table;
 var fontItalic;
 var mySound;
+var button2;
+var input, button, greeting;
 
 function preload(){
-  //data
-  table = loadTable('data/AIsearch.csv', 'header');
   //font
   fontItalic = loadFont('images/typewriter.ttf');
   //music
   soundFormats('mp3', 'm4a'); 
-  mySound = loadSound('images/themoonsong.m4a');
+  mySound = loadSound('sound/tiredboy.m4a');
 }
 
 function setup(){
-  createCanvas(1200, 900);
-  //data
-  loadData();
+  createCanvas(windowWidth, 1000);
+  background(0);
   //sound loop on going
   mySound.loop(); 
-  //print words and show in console
-  var tableArray = table.getArray();
-  print(table.getRowCount() + ' total rows in table');
-  print(table.getColumnCount() + ' total columns in table')
-  print(table.getColumn('name'));
+  //buttonSound
+  button2 = createButton('play');
+  button2.position(windowWidth-70, 110);
+  button2.mousePressed(togglePlaying);
+  //button submit
+  textFont(fontItalic);
+  input = createInput();
+  input.position(20, 160);
+
+  button = createButton('submit');
+  button.position(input.x + input.width, 160);
+  button.mousePressed(greet);
+
+  greeting = createElement('h2', 'Define yourself in a word?');
+  greeting.position(20, 100);
+
+  textAlign(CENTER);
+  textSize(50);
 }
 
-function draw(){
-  background(53, 204, 153); //lettuce green
-  // Display all bubbles
-  for (var i = 0; i < bubbles.length; i++){
-    bubbles[i].display();
-  }
+function loaded(){
+  console.log('loaded')
 }
 
-function loadData(){
-  // The size of the array of Bubble objects is determined by the total number of rows in the CSV
-  bubbles = []; 
-
-  // You can access iterate over all the rows in a table
-  for (var i = 0; i < table.getRowCount(); i++){
-    var row = table.getRow(i);
-    // You can access the fields via their column name (or index)
-    var keyword = row.get("keyword");
-    var frequency = row.get("frequency");
-    var intersectionAI = row.get("intersectionAI");
-    // Make a Bubble object out of the data read
-    bubbles[i] = new Bubble(random(100, 1100), random(100, 800), keyword, frequency, intersectionAI);
-  }
-}
-
-class Bubble{
-  constructor(tempX, tempY, tempKeyword, tempFrequency, tempIntersectionAI){
-    this.x = tempX;
-    this.y = tempY;
-    this.keyword = String(tempKeyword);
-    this.frequency = Number(tempFrequency);
-    this.intersectionAI = Number(tempIntersectionAI);
-}
-
-// Display the Bubble
-display() {
-    stroke(140, 109, 211);
-    //fill(253, 122, 131);
-    ellipse(this.x, this.y, (this.frequency)/100, (this.intersectionAI)/100);
-    textAlign(CENTER);
-    textFont(fontItalic);
-    textSize(20);
-    text(this.keyword, this.x, this.y-20);
-    text(this.frequency, this.x, this.y+20);
-}
-
-}
-
-function mousePressed(){
-  if (mySound.isPlaying()){ // .isPlaying() returns a boolean
-    mySound.stop();
-  } else {
+function togglePlaying(){
+  if(!mySound.isPlaying()){
     mySound.play();
+    mySound.setVolume(0.3);
+    button2.html('pause')
+  }else{
+    mySound.pause();
+    button2.html('play');
+  }
+}
+
+function greet() {
+  var name = input.value();
+  greeting.html('Your are '+name+'!');
+  input.value('');
+
+  for (var i=0; i<30; i++) {
+    push();
+    fill(random(0,255),random(0,255),random(0,255));
+    translate(random(width), random(height));
+    rotate(random(2*PI));
+    text(name, 0, 0);
+    pop();
   }
 }
