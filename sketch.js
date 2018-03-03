@@ -23,14 +23,14 @@ function setup(){
   //button submit
   textFont(fontItalic);
   input = createInput();
-  input.position(20, 160);
+  input.position(20, 180);
 
   button = createButton('submit');
-  button.position(input.x + input.width, 160);
+  button.position(input.x + input.width, 180);
   button.mousePressed(greet);
 
   greeting = createElement('h2', 'Define yourself in a word?');
-  greeting.position(20, 100);
+  greeting.position(20, 120);
 
   textAlign(CENTER);
   textSize(50);
