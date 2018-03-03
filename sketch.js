@@ -53,7 +53,7 @@ function togglePlaying(){
 
 function greet() {
   var name = input.value();
-  greeting.html('Your are '+name+'!');
+  greeting.html('You are '+name+'!');
   input.value('');
 
   for (var i=0; i<30; i++) {

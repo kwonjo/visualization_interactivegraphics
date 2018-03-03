@@ -36,7 +36,7 @@ function draw(){
   background(53, 204, 153); //lettuce green
   //move
   push();
-  translate(-650, -400);
+  translate(-600, -500);
   //pieChart
   pieChart(150, angles);
   pop();
