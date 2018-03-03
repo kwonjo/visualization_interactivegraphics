@@ -14,8 +14,6 @@ function preload(){
 function setup(){
   createCanvas(windowWidth, 1000);
   background(0);
-  //sound loop on going
-  mySound.loop(); 
   //buttonSound
   button2 = createButton('play');
   button2.position(windowWidth-70, 110);
@@ -29,7 +27,7 @@ function setup(){
   button.position(input.x + input.width, 180);
   button.mousePressed(greet);
 
-  greeting = createElement('h2', 'Define yourself in a word?');
+  greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
   greeting.position(20, 120);
 
   textAlign(CENTER);
