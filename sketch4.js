@@ -3,7 +3,7 @@ var table;
 var fontItalic;
 var mySound;
 var angles = [90, 90, 90, 90];
-var colors = ['#35CC99', '#FD7A83', '#8C6DD3', '#F2F0A1'];
+var colors = ['#35CC99', '#FD7A83', '#8C6DD3', '#311938'];
 var pieChart;
 
 function preload(){
@@ -12,7 +12,7 @@ function preload(){
   //font
   fontItalic = loadFont('images/typewriter.ttf');
   //music
-  soundFormats('mp3', 'm4a'); 
+  soundFormats('m4a'); 
   mySound = loadSound('sound/themoonsong.m4a');
 }
 
@@ -33,7 +33,7 @@ function setup(){
 }
 
 function draw(){
-  background(53, 204, 153); //lettuce green
+  background(49, 25, 56); //dark violet
   //move
   push();
   translate(-600, -500);
@@ -41,6 +41,7 @@ function draw(){
   pieChart(150, angles);
   pop();
   // Display all bubbles
+  translate(0,0);
   for (var i = 0; i < bubbles.length; i++){
     bubbles[i].display();
   }
@@ -74,12 +75,13 @@ class Bubble{
 
 // Display the Bubble
 display() {
-    stroke(140, 109, 211);
-    //fill(253, 122, 131); //peach
+    stroke(253, 122, 131);
+    fill(253, 122, 131); //peach
     ellipse(this.x, this.y, (this.frequency)/100, (this.intersectionAI)/100);
     textAlign(CENTER);
     textFont(fontItalic);
     textSize(20);
+    
     text(this.keyword, this.x, this.y-20);
     text(this.frequency, this.x, this.y+20);
 }
