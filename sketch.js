@@ -1,6 +1,6 @@
 var fontItalic;
 var mySound;
-var button2;
+//var button2;
 var input, button, greeting;
 
 function preload(){
@@ -27,7 +27,7 @@ function setup(){
   button.position(input.x + input.width, 200);
   button.mousePressed(greet);
 
-// greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
+//greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
 //greeting.position(20, 120);
 
   textAlign(CENTER);
