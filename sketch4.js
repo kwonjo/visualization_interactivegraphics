@@ -36,7 +36,7 @@ function draw(){
   background(49, 25, 56); //dark violet
   //move
   push();
-  translate(-600, -500);
+  translate(20, 20);
   //pieChart
   pieChart(150, angles);
   pop();

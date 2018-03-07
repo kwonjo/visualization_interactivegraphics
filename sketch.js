@@ -27,8 +27,8 @@ function setup(){
   button.position(input.x + input.width, 180);
   button.mousePressed(greet);
 
-  greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
-  greeting.position(20, 120);
+ // greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
+  //greeting.position(20, 120);
 
   textAlign(CENTER);
   textSize(50);
