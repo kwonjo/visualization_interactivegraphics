@@ -15,20 +15,20 @@ function setup(){
   createCanvas(windowWidth, 1000);
   background(0);
   //buttonSound
-  button2 = createButton('play');
-  button2.position(windowWidth-70, 110);
-  button2.mousePressed(togglePlaying);
+  // button2 = createButton('play');
+  // button2.position(windowWidth-70, 110);
+  // button2.mousePressed(togglePlaying);
   //button submit
   textFont(fontItalic);
   input = createInput();
-  input.position(20, 180);
+  input.position(20, 200);
 
-  button = createButton('submit');
-  button.position(input.x + input.width, 180);
+  button = createButton('enter');
+  button.position(input.x + input.width, 200);
   button.mousePressed(greet);
 
- // greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
-  //greeting.position(20, 120);
+// greeting = createElement('h2', 'Give a definition (a statement expressing the essential nature of something) of yourself:');
+//greeting.position(20, 120);
 
   textAlign(CENTER);
   textSize(50);
@@ -42,16 +42,15 @@ function togglePlaying(){
   if(!mySound.isPlaying()){
     mySound.play();
     mySound.setVolume(0.3);
-    button2.html('pause')
+    //button2.html('pause')
   }else{
     mySound.pause();
-    button2.html('play');
+    //button2.html('play');
   }
 }
 
 function greet() {
   var name = input.value();
-  greeting.html('You are '+name+'!');
   input.value('');
 
   for (var i=0; i<30; i++) {
