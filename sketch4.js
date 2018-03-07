@@ -34,18 +34,18 @@ function setup(){
 
 function draw(){
   background(49, 25, 56); //dark violet
-  //move
-  push();
-  translate((windowWidth/4-1200), (windowHeight/4-700));
   //pieChart
   pieChart(150, angles);
-  pop();
   // Display all bubbles
   translate(0,0);
   for (var i = 0; i < bubbles.length; i++){
     bubbles[i].display();
   }
 
+}
+
+function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function loadData(){
@@ -75,7 +75,7 @@ class Bubble{
 
 // Display the Bubble
 display() {
-    stroke(253, 122, 131);
+    stroke(49, 25, 56);
     fill(253, 122, 131); //peach
     ellipse(this.x, this.y, (this.frequency)/100, (this.intersectionAI)/100);
     textAlign(CENTER);
@@ -101,7 +101,7 @@ function pieChart(diameter, data){
     var lastAngle = 0;
     for(var i = 0; i < data.length; i++){
       fill(color(colors[i]));
-      arc(width/2, height/2, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));
+      arc(0 + windowWidth/10, 0 + windowWidth/10, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));
       lastAngle += radians(angles[i]);
     }
 }

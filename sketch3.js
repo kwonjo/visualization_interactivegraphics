@@ -115,7 +115,7 @@ function draw(){
     if(mouseIsPressed){
         //trigger sound
         mySound.play();
-        mySound.setVolume(0.12);
+        mySound.setVolume(0.2);
 
         //smiley face
         stroke(153, 204, 153); //lettuce green

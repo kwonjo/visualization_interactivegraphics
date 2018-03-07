@@ -14,10 +14,8 @@ function preload(){
 function setup(){
   createCanvas(windowWidth, 1000);
   background(0);
-  //buttonSound
-  // button2 = createButton('play');
-  // button2.position(windowWidth-70, 110);
-  // button2.mousePressed(togglePlaying);
+  //sound loop on going
+  mySound.loop(); 
   //button submit
   textFont(fontItalic);
   input = createInput();
@@ -41,11 +39,9 @@ function loaded(){
 function togglePlaying(){
   if(!mySound.isPlaying()){
     mySound.play();
-    mySound.setVolume(0.3);
-    //button2.html('pause')
+    mySound.setVolume(0.2);
   }else{
     mySound.pause();
-    //button2.html('play');
   }
 }
 
