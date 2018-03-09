@@ -5,10 +5,17 @@ var mySound;
 var angles = [90, 90, 90, 90];
 var colors = ['#35CC99', '#FD7A83', '#8C6DD3', '#311938'];
 var pieChart;
+// Reference to physics world
+let physics;
+// A list of cluster objects
+let cluster;
+// Boolean that indicates whether we draw connections or not
+let showPhysics = true;
+let showParticles = true;
 
 function preload(){
   //data
-  table = loadTable('data/AIsearch.csv', 'header');
+  //table = loadTable('aifilms/ai_data.csv', 'csv', 'header');
   //font
   fontItalic = loadFont('images/typewriter.ttf');
   //music
@@ -19,74 +26,86 @@ function preload(){
 function setup(){
   createCanvas(windowWidth, windowHeight);
   //data
-  loadData();
+  //loadData();
   //sound loop on going
   mySound.loop(); 
   //print words and show in console
-  var tableArray = table.getArray();
-  print(table.getRowCount() + ' total rows in table');
-  print(table.getColumnCount() + ' total columns in table')
-  print(table.getColumn('name'));
+  //var tableArray = table.getArray();
+  //print(table.getRowCount() + 'total rows in table');
+  //print(table.getColumnCount() + 'total columns in table')
+  //print(table.getColumn('name'));
 
   noStroke();
   noLoop(); 
+
+  createP("'p' to display or hide particles<br>'c' to display or hide connections<br>'n' for new graph");
+
+  // Initialize the physics
+  physics = new VerletPhysics2D();
+
+  // Set the world's bounding box
+  physics.setWorldBounds(new Rect(0, 0, width, height));
+  
+  // Spawn a new random graph
+  cluster = new Cluster(8, 100, new Vec2D(width / 2, height / 2));
 }
 
 function draw(){
+
+  // Update the physics world
+  physics.update();
   background(49, 25, 56); //dark violet
+
   //pieChart
   pieChart(150, angles);
-  // Display all bubbles
-  translate(0,0);
-  for (var i = 0; i < bubbles.length; i++){
-    bubbles[i].display();
+
+  // Update physics
+  physics.update();
+  // Display all points
+  if (showParticles) {
+    cluster.display();
   }
 
+  // If we want to see the physics
+  if (showPhysics) {
+    cluster.showConnections();
+  }
 }
 
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
+
+// Key press commands
+function keyPressed() {
+  if (key == 'c' || key == 'C') {
+    showPhysics = !showPhysics;
+    if (!showPhysics) showParticles = true;
+  } 
+  else if (key == 'p' || key == 'P') {
+    showParticles = !showParticles;
+    if (!showParticles) showPhysics = true;
+  } 
+  else if (key == 'n' || key == 'N') {
+    physics.clear();
+    cluster = new Cluster(Math.floor(random(2, 20)), random(10, height-100), new Vec2D(width/2, height/2));
+  }
 }
 
 function loadData(){
   // The size of the array of Bubble objects is determined by the total number of rows in the CSV
-  bubbles = []; 
+  //bubbles = []; 
 
   // You can access iterate over all the rows in a table
   for (var i = 0; i < table.getRowCount(); i++){
     var row = table.getRow(i);
     // You can access the fields via their column name (or index)
-    var keyword = row.get("keyword");
-    var frequency = row.get("frequency");
-    var intersectionAI = row.get("intersectionAI");
+    //var keyword = row.get("keyword");
+    //var frequency = row.get("frequency");
+    //var intersectionAI = row.get("intersectionAI");
+    var goodbye = row.get("Goodbye");
     // Make a Bubble object out of the data read
-    bubbles[i] = new Bubble(random(100, 1100), random(100, 800), keyword, frequency, intersectionAI);
+    //bubbles[i] = new Bubble(random(100, 1100), random(100, 800), keyword, frequency, intersectionAI);
   }
 }
 
-class Bubble{
-  constructor(tempX, tempY, tempKeyword, tempFrequency, tempIntersectionAI){
-    this.x = tempX;
-    this.y = tempY;
-    this.keyword = String(tempKeyword);
-    this.frequency = Number(tempFrequency);
-    this.intersectionAI = Number(tempIntersectionAI);
-}
-
-// Display the Bubble
-display() {
-    stroke(49, 25, 56);
-    fill(253, 122, 131); //peach
-    ellipse(this.x, this.y, (this.frequency)/100, (this.intersectionAI)/100);
-    textAlign(CENTER);
-    textFont(fontItalic);
-    textSize(20);
-    
-    text(this.keyword, this.x, this.y-20);
-    text(this.frequency, this.x, this.y+20);
-}
-
-}
 
 function mousePressed(){
   if (mySound.isPlaying()){ //.isPlaying() returns a boolean
@@ -96,6 +115,10 @@ function mousePressed(){
   }
 }
 
+//piechart relocate
+function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
+}
 //piechart
 function pieChart(diameter, data){
     var lastAngle = 0;
