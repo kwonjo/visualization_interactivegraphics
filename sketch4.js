@@ -99,7 +99,6 @@ function loadData(){
     // You can access the fields via their column name (or index)
     //var keyword = row.get("keyword");
     //var frequency = row.get("frequency");
-    //var intersectionAI = row.get("intersectionAI");
     var goodbye = row.get("Goodbye");
     // Make a Bubble object out of the data read
     //bubbles[i] = new Bubble(random(100, 1100), random(100, 800), keyword, frequency, intersectionAI);
