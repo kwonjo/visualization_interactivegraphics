@@ -1,16 +1,5 @@
 # [Artificial Intelligence](https://kwonjo.github.io/visualization_interactivegraphics/)
 
-![AI Project](/images/project2.png)
-
-## What is the project about?
-
-
-
-## How did I come up with the idea?
-
-
-
-
 ## How was this piece created?
 
 ## 1. Artificial Intelligence
@@ -37,11 +26,3 @@ Violet: color(140, 109, 211)
 Peach: color(253, 122, 131)
 Lettuce Green: color(53, 204, 153)
 Yellow: color(242, 240, 161)
-
-## 4. The use of interaction 
-
-
-
-```javascript
-    soon
-```
