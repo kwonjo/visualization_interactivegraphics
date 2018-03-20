@@ -24,7 +24,7 @@ class Cluster {
     for (let i = 0; i < this.nodes.length - 1; i++) {
       for (let j = i + 1; j < this.nodes.length; j++) {
         // A Spring needs two particles, a resting length, and a strength
-        physics.addSpring(new VerletSpring2D(this.nodes[i], this.nodes[j], this.diameter, 0.05));
+        physics.addSpring(new VerletSpring2D(this.nodes[i], this.nodes[j], this.diameter, 0.04));
       }
     }
   }

@@ -20,12 +20,13 @@ class Node extends VerletParticle2D {
     fill(253, 122, 131);
     stroke(153, 204, 153);
     strokeWeight(2);
-    //ellipse(this.x, this.y, 50, 50);
-    for(let i=0; i<table.getRowCount(); i++){
+    //ellipse(this.x, this.y, 50, 30);
+    for(let j=0; j<20;j++){
+      for(let i=0; i<table.getRowCount(); i++){
       text(str(bye), this.x, this.y);
+      text(str(struggle), this.x, this.y);
       //text(str(this.data)), this.x, this.y); 
-      //print(bye[i])
+      }
     }
-    
   }
 }

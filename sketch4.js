@@ -137,11 +137,6 @@ function keyPressed() {
     console.log('p pressed');
     if (!showParticles) showPhysics = true;
   } 
-  // else if (key == 'n' || key == 'N') {
-  //   physics.clear();
-  //   console.log('n pressed');
-  //   cluster = new Cluster(20, random(10, height-100), new Vec2D(width/2, height/2));
-  // }
 }
 
 function loadData(){
