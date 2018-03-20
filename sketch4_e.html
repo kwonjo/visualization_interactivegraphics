@@ -82,6 +82,39 @@
   <p class="p1" style="padding-left: 30px;">Topic modeling enabled the movie scripts to be organized into 10 topics with the optimal interval of 15.&nbsp;</p>
   <p class="p1" style="padding-left: 30px;"><strong>3. Color Selection</strong></p>
   <p style="padding-left: 30px;">Every year <a href="https://www.pantone.com/color-of-the-year-2018-tools-for-designers">Pantone</a> introduces the color of the year and the color of the year 2018 is ultra violet(18-3838).I have always had the interest in Pantone's selections and this year's color was attractive to me. The "Floral Fantasies" selection seemed interesting and I have wanted to incorporate it in some of my work. I have used ultra violet, dark violet, peach, and lettuce green for this piece.&nbsp;</p>
+  <div><div style="padding-left: 30px;"><code>var colors = ['#35CC99', '#FD7A83', '#8C6DD3', '#311938'];</code></div><br>
   <p class="p1" style="padding-left: 30px;"><strong>4. p5.js</strong></p>
+  <ul>
+    <li>Daniel Shiffman's <em><a href="http://natureofcode.com/">The Nature of Code</a>'s</em>&nbsp;physics libraries were used for creating clusters and nodes.&nbsp;</li>
+    </ul>
+    <p style="padding-left: 30px;">&nbsp;</p>
+    <ul>
+    <li>"The Moon Song" is the song that was featured in the movie <em>Her</em> and Samantha (Scarlett Johansson), the AI, performs the song. It was nominated for Best Original Song by the Academy Awards.</li>
+    </ul>
+    <div>
+    <div style="padding-left: 30px;"><code>function mousePressed(){</code></div>
+    <div style="padding-left: 60px;"><code>if (mySound.isPlaying()){ //.isPlaying() returns a boolean</code></div>
+    <div style="padding-left: 60px;"><code>mySound.stop();</code></div>
+    <div style="padding-left: 60px;"><code>} else {</code></div>
+    <div style="padding-left: 60px;"><code>mySound.play();</code></div>
+    <div style="padding-left: 60px;"><code>}</code></div>
+    <div style="padding-left: 30px;"><code>}</code></div>
+    </div>
+    <ul>
+    <li>A pie chart of colors was created to emphasize the Pantone colors that were used in this sketch. <code></code></li>
+    </ul>
+    <div>
+    <div style="padding-left: 30px;"><code>function pieChart(diameter, data){</code></div>
+    <div style="padding-left: 60px;"><code>varlastAngle=0;</code></div>
+    <div style="padding-left: 60px;"><code>for(vari=0; i&lt;data.length; i++){</code></div>
+    <div style="padding-left: 60px;"><code>fill(color(colors[i]));</code></div>
+    <div style="padding-left: 60px;"><code>arc(0+windowWidth/10, 0+windowWidth/10, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));</code></div>
+    <div style="padding-left: 60px;"><code>lastAngle+=radians(angles[i]);</code></div>
+    <div style="padding-left: 60px;"><code>}</code></div>
+    <div style="padding-left: 30px;"><code>}</code></div>
+    </div>
+    <p style="padding-left: 60px;"><code></code></p>
+    <p style="padding-left: 30px;">&nbsp;</p>
+
 </body>
 </html> 
