@@ -61,7 +61,7 @@ function setup(){
     for (var c = 0; c < table.getColumnCount(); c++){
       //print(table.getString(r, c));
     }
-  noStroke();
+  //noStroke();
   createP("'p' to display or hide particles<br>'c' to display or hide connections<br>");
 
   // Initialize the physics
@@ -87,7 +87,7 @@ function draw(){
   // Update the physics world
   physics.update();
   background(49, 25, 56); //dark violet
-
+  noStroke();
   // pieChart
   pieChart(150, angles);
 
@@ -100,7 +100,7 @@ function draw(){
   if (showParticles) {
     cluster.display();
     cluster2.display();
-    // cluster3.display();
+    cluster3.display();
     // cluster4.display();
     // cluster5.display();
     // cluster6.display();
@@ -114,7 +114,7 @@ function draw(){
   if (showPhysics) {
     cluster.showConnections();
     cluster2.showConnections();
-    // cluster3.showConnections();
+    cluster3.showConnections();
     // cluster4.showConnections();
     // cluster5.showConnections();
     // cluster6.showConnections();
