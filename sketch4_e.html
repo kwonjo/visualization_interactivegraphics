@@ -67,7 +67,7 @@
   <ul>
   <li><strong>What is the project about?</strong></li>
   </ul>
-  <div style="padding-left: 30px;">My MA thesis is on AI and I wanted to explore more on AI in various areas. I enjoy watching movies and movies have an impact on how people think of a specific issue. I have read <a href="https://books.google.com/books/about/Neosentience.html?id=OxG44y3rtC4C&amp;printsec=frontcover&amp;source=kp_read_button#v=onepage&amp;q&amp;f=false">Neosentience The Benevolence Engine</a>&nbsp;which mentions films related to AI. The movies introduced in the book are<em> <a href="http://www.imdb.com/title/tt0212720/">A.I.(2001)</a></em> and <em><a href="http://www.imdb.com/title/tt0343818/?ref_=nv_sr_1">I, Robot(2004)</a></em>. The recent movie of AI that has been revolutionary is <a href="http://www.imdb.com/title/tt1798709/?ref_=rvi_tt"><em>Her(2013)</em></a>. I used the three scripts from these films to analyze the texts to observe how AI was being portrayed by films.&nbsp;</div>
+  <div style="padding-left: 30px;">My MA thesis is on AI and I wanted to explore more on AI in various areas. I enjoy watching movies and movies have an impact on how people think of a specific issue. I have read <a href="https://books.google.com/books/about/Neosentience.html?id=OxG44y3rtC4C&amp;printsec=frontcover&amp;source=kp_read_button#v=onepage&amp;q&amp;f=false"><em>Neosentience The Benevolence Engine</em></a>&nbsp;which mentions films related to AI. The movies introduced in the book are<em> <a href="http://www.imdb.com/title/tt0212720/">A.I.(2001)</a></em> and <em><a href="http://www.imdb.com/title/tt0343818/?ref_=nv_sr_1">I, Robot(2004)</a></em>. The recent movie of AI that has been revolutionary is <a href="http://www.imdb.com/title/tt1798709/?ref_=rvi_tt"><em>Her(2013)</em></a>. I used the three scripts from these films to analyze the texts to observe how AI was being portrayed by films.&nbsp;</div>
   <div style="padding-left: 30px;">&nbsp;</div>
   <ul>
   <li><strong>How was the piece created?</strong></li>
@@ -85,36 +85,43 @@
   <div><div style="padding-left: 30px;"><code>var colors = ['#35CC99', '#FD7A83', '#8C6DD3', '#311938'];</code></div><br>
   <p class="p1" style="padding-left: 30px;"><strong>4. p5.js</strong></p>
   <ul>
-    <li>Daniel Shiffman's <em><a href="http://natureofcode.com/">The Nature of Code</a>'s</em>&nbsp;physics libraries were used for creating clusters and nodes.&nbsp;</li>
-    </ul>
-    <p style="padding-left: 30px;">&nbsp;</p>
-    <ul>
-    <li>"The Moon Song" is the song that was featured in the movie <em>Her</em> and Samantha (Scarlett Johansson), the AI, performs the song. It was nominated for Best Original Song by the Academy Awards.</li>
-    </ul>
-    <div>
-    <div style="padding-left: 30px;"><code>function mousePressed(){</code></div>
-    <div style="padding-left: 60px;"><code>if (mySound.isPlaying()){ //.isPlaying() returns a boolean</code></div>
-    <div style="padding-left: 60px;"><code>mySound.stop();</code></div>
-    <div style="padding-left: 60px;"><code>} else {</code></div>
-    <div style="padding-left: 60px;"><code>mySound.play();</code></div>
-    <div style="padding-left: 60px;"><code>}</code></div>
-    <div style="padding-left: 30px;"><code>}</code></div>
-    </div>
-    <ul>
-    <li>A pie chart of colors was created to emphasize the Pantone colors that were used in this sketch. <code></code></li>
-    </ul>
-    <div>
-    <div style="padding-left: 30px;"><code>function pieChart(diameter, data){</code></div>
-    <div style="padding-left: 60px;"><code>varlastAngle=0;</code></div>
-    <div style="padding-left: 60px;"><code>for(vari=0; i&lt;data.length; i++){</code></div>
-    <div style="padding-left: 60px;"><code>fill(color(colors[i]));</code></div>
-    <div style="padding-left: 60px;"><code>arc(0+windowWidth/10, 0+windowWidth/10, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));</code></div>
-    <div style="padding-left: 60px;"><code>lastAngle+=radians(angles[i]);</code></div>
-    <div style="padding-left: 60px;"><code>}</code></div>
-    <div style="padding-left: 30px;"><code>}</code></div>
-    </div>
-    <p style="padding-left: 60px;"><code></code></p>
-    <p style="padding-left: 30px;">&nbsp;</p>
-
+  <li>Daniel Shiffman's <em><a href="http://natureofcode.com/">The Nature of Code</a>'s</em>&nbsp;physics libraries were used for creating clusters and nodes.&nbsp;</li>
+  </ul>
+  <p style="padding-left: 30px;">&nbsp;</p>
+  <ul>
+  <li>"The Moon Song" is the song that was featured in the movie <em>Her</em> and Samantha (Scarlett Johansson), the AI, performs the song. It was nominated for Best Original Song by the Academy Awards.</li>
+  </ul>
+  <p style="padding-left: 30px;">&nbsp;</p>
+  <p style="padding-left: 30px;"><em>There's things I wish I knew </em></p>
+  <p style="padding-left: 30px;"><em>There's no thing I'd keep from you </em></p>
+  <p style="padding-left: 30px;"><em>It's a dark and shiny place </em></p>
+  <p style="padding-left: 30px;"><em>But with you my dear</em></p>
+  <p style="padding-left: 30px;"><em>I'm safe and we're a million miles away</em></p>
+  <div>
+  <div style="padding-left: 30px;"><code>function mousePressed(){</code></div>
+  <div style="padding-left: 60px;"><code>if (mySound.isPlaying()){ //.isPlaying() returns a boolean</code></div>
+  <div style="padding-left: 60px;"><code>mySound.stop();</code></div>
+  <div style="padding-left: 60px;"><code>} else {</code></div>
+  <div style="padding-left: 60px;"><code>mySound.play();</code></div>
+  <div style="padding-left: 60px;"><code>}</code></div>
+  <div style="padding-left: 30px;"><code>}</code></div>
+  </div>
+  <p style="padding-left: 30px;">&nbsp;</p>
+  <ul>
+  <li>A pie chart of colors was created to emphasize the Pantone colors that were used in this sketch. <code></code></li>
+  </ul>
+  <p style="padding-left: 30px;">&nbsp;</p>
+  <div>
+  <div style="padding-left: 30px;"><code>function pieChart(diameter, data){</code></div>
+  <div style="padding-left: 60px;"><code>varlastAngle=0;</code></div>
+  <div style="padding-left: 60px;"><code>for(vari=0; i&lt;data.length; i++){</code></div>
+  <div style="padding-left: 60px;"><code>fill(color(colors[i]));</code></div>
+  <div style="padding-left: 60px;"><code>arc(0+windowWidth/10, 0+windowWidth/10, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));</code></div>
+  <div style="padding-left: 60px;"><code>lastAngle+=radians(angles[i]);</code></div>
+  <div style="padding-left: 60px;"><code>}</code></div>
+  <div style="padding-left: 30px;"><code>}</code></div>
+  </div>
+  <p style="padding-left: 60px;"><code></code></p>
+  <p style="padding-left: 30px;">&nbsp;</p>
 </body>
 </html> 
