@@ -57,11 +57,11 @@ function setup(){
   physics.setWorldBounds(new Rect(0, 0, width, height));
   // Spawn a new random graph
   // cluster = new Cluster(number of nodes, distance of connections, x, y);
-  cluster = new Cluster(20, 100, new Vec2D(330, 150), bye);
+  cluster = new Cluster(20, 130, new Vec2D(330, 150), bye);
   cluster2 = new Cluster(20, 230, new Vec2D(200, 450), struggle);
   cluster3 = new Cluster(20, 150, new Vec2D(600, 200), theo);
   cluster4 = new Cluster(20, 170, new Vec2D(900, 180), individual);
-  cluster5 = new Cluster(20, 130, new Vec2D(550, 460), david);
+  cluster5 = new Cluster(20, 160, new Vec2D(550, 460), david);
   cluster6 = new Cluster(20, 350, new Vec2D(1000, 510), Family);//overlap on purpose
   cluster7 = new Cluster(20, 220, new Vec2D(1300, 200), Abstract);
   cluster8 = new Cluster(20, 250, new Vec2D(1400, 600), relationships);

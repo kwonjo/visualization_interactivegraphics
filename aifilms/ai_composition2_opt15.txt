@@ -1,26 +1,4 @@
-		Goodbye	Struggle	Theo on a desktop	Individual	David is a robot	People relationships	Family	Not Sure	Robots	Emotions					
-0	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/AI.txt	0.074301513	1.91E-05	0.001013268	0.217824605	0.077025704	2.20E-05	0.624528246	2.97E-05	2.63E-04	0.00497267					
-1	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/IRobot.txt	1.83E-05	0.119655756	3.03E-05	0.360423871	1.87E-05	2.93E-05	2.07E-05	0.002675992	0.517100322	2.68E-05					
-2	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/Her.txt	7.38E-06	1.03E-05	0.066303089	0.057325842	7.54E-06	0.736931827	8.37E-06	0.068037296	8.35E-06	0.071360023					
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
-																
+		Goodbye	Struggle	Theo	Individual	David	Relationships	Family	Abstract	Robots	Emotions
+0	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/AI.txt	0.074301513	1.91E-05	0.001013268	0.217824605	0.077025704	2.20E-05	0.624528246	2.97E-05	2.63E-04	0.00497267
+1	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/IRobot.txt	1.83E-05	0.119655756	3.03E-05	0.360423871	1.87E-05	2.93E-05	2.07E-05	0.002675992	0.517100322	2.68E-05
+2	file:/Users/jkwon/Downloads/mallet-2.0.8/aimovies_txt/Her.txt	7.38E-06	1.03E-05	0.066303089	0.057325842	7.54E-06	0.736931827	8.37E-06	0.068037296	8.35E-06	0.071360023
