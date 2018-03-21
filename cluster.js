@@ -4,42 +4,37 @@
 // Force directed graph
 // Heavily based on: http://code.google.com/p/fidgen/
 
-class Cluster {
-  constructor(n, d, center){
-
+function Cluster(n, d, center, tempData) {
     // A cluster is a grouping of nodes
     this.nodes = [];
     // Set the diameter
-    this.diameter = d;
-
-    //this.datarow = datarow;
+    this.diameter = d; 
+    this.data = tempData;
 
     // Create the nodes
     for (let i = 0; i < n; i++) {
       // We can't put them right on top of each other
-      this.nodes.push(new Node(center.add(Vec2D.randomVector())));
+      this.nodes.push(new Node(center.add(Vec2D.randomVector()), this.data[i]));
     }
-
     // Connect all the nodes with a Spring
-    for (let i = 0; i < this.nodes.length - 1; i++) {
-      for (let j = i + 1; j < this.nodes.length; j++) {
+    for (var i = 0; i < this.nodes.length-1; i++) {
+      for (var j = i+1; j < this.nodes.length; j++) {
         // A Spring needs two particles, a resting length, and a strength
-        physics.addSpring(new VerletSpring2D(this.nodes[i], this.nodes[j], this.diameter, 0.04));
+        physics.addSpring(new VerletSpring2D(this.nodes[i], this.nodes[j], this.diameter, 0.05));
+        //physics.addSpring(new VerletSpring2D(this.nodes[i], this.nodes[j], 400, 0.0009));
       }
     }
-  }
 
-
-  display() {
+  this.display = function() {
     // Show all the nodes
     for (let i = 0; i < this.nodes.length; i++) {
       this.nodes[i].display();
-
     }
   }
+  
 
   // Draw all the internal connections
-  showConnections() {
+  this.showConnections= function() {
     stroke(153, 204, 153);
     strokeWeight(1);
     for (let i = 0; i < this.nodes.length - 1; i++) {
