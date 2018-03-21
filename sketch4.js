@@ -89,11 +89,8 @@ function draw(){
   // Update the physics world
   physics.update();
   background(49, 25, 56); //dark violet
-  noStroke();
   // Update the physics world
   physics.update();
-  // Text in particles
-  textAlign(CENTER);
   // Display all points
   if (showParticles) {
     cluster.display();
@@ -123,6 +120,7 @@ function draw(){
   }
   
   // pieChart
+  noStroke();
   pieChart(150, angles);
   }
 
