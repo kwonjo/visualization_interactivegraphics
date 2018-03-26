@@ -10,6 +10,7 @@ function Node(pos, tempData) {
   // Override the display method
   this.display = function(){
     textSize(20);
+    textFont(fontItalic);
     textAlign(CENTER);
     fill(253, 122, 131);
     noStroke();

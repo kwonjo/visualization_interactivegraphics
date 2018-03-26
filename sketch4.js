@@ -43,6 +43,8 @@ function preload(){
   //music
   soundFormats('m4a'); 
   mySound = loadSound('sound/themoonsong.m4a');
+  //font
+  fontItalic = loadFont('images/typewriter.ttf');
 }
 
 function setup(){
