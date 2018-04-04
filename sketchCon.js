@@ -1,9 +1,9 @@
 //define variables
-var smiley;
 var fontItalic;
 var xoff = 0.0;
 var mySound;
 var table;
+var button;
 
 //function preload: image, font, sound, words
 function preload() {
@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup(){
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, 700);
 }
 
 function draw(){
@@ -28,8 +28,11 @@ function draw(){
     fill(140, 109, 211); //#8c6dd3 violet 
     var s = 'Jo Joungwon Kwon\n CMAC MA Student\n in Duke University\n ';   
     text(s, windowWidth/2, 50);
+    createA('https://aahvs.duke.edu/people/profile/jo-kwon', 'this is a link');
     var t = 'jo.kwon@duke.edu\n https://aahvs.duke.edu/people/profile/jo-kwon'
     text(t, windowWidth/2, 200);
-
+    noLoop();
 
 }
+
+
