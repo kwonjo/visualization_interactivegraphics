@@ -29,4 +29,4 @@ This art piece was shown in 2015 and I found this artist from Matt's recommendat
 
 ![image3](/images/6youknow.jpg)
 
-![image4](/images/6yRH.jpeg)
+![image4](/images/6RH.jpeg)
