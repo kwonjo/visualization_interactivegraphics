@@ -9,6 +9,7 @@ function preload(){
   //music
   soundFormats('mp3', 'm4a'); 
   mySound = loadSound('sound/tiredboy.m4a');
+  mySound.setVolume(0.2);
 }
 
 function setup(){

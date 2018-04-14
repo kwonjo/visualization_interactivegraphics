@@ -20,3 +20,13 @@ This project is from my class "Physical Computing" last semester. After the pres
 [Here's a link to the piece](https://github.com/cavarres/physical-computing-final)
 
 ![image2](/images/6watching.png)
+
+### 3. You Know I'm No Good by Rachel Harrison
+
+This art piece was shown in 2015 and I found this artist from Matt's recommendation. It has faces and peoples on the drawings. Amy Winehouse's life and music inspired the art. The drawings may seem simple and the colors are vivid. The one hugely displayed in the webpage shows one side of Amy Winehouse. Some are frawn with one color and it is clearly visible that the drawing is the singer. I like this piece because of the connection of the drawing overall. The hair and the mic cord are connected and her upper body is also connected to her face and arm. It seems like the drawing may have been drawn with only a few lines. I would like to read and hear more about the piece from the artist. 
+
+[Here's a link to the piece](https://www.artsy.net/show/contemporary-jewish-museum-you-know-im-no-good-1)
+
+![image3](/images/6youknow.jpg)
+
+![image4](/images/6yRH.jpeg)
