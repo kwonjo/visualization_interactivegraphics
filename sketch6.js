@@ -117,12 +117,3 @@ function mousePressed(){
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }
-// piechart
-function pieChart(diameter, data){
-    var lastAngle = 0;
-    for(var i = 0; i < data.length; i++){
-      fill(color(colors[i]));
-      arc(0 + windowWidth/15, 0 + windowWidth/10, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));
-      lastAngle += radians(angles[i]);
-    }
-}
