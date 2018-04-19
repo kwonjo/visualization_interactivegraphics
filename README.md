@@ -12,6 +12,7 @@ I've been defining different terms throughoutthis semester and I believe that a 
 
 ### Design (EXTRA EXPLANATION)
 [Color Selection (2018)](https://www.pantone.com/color-of-the-year-2018-tools-for-designers) 
+
 ![PANTONE](/images/color2018.png)
 
 Violet: color(140, 109, 211)
@@ -27,11 +28,11 @@ Replace with a description of the interactive dimensions of your project.  How d
 
 Do you intend to extend a piece that you've created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?
 
-![Previous Piece](AIinFilms.png)
+![Previous Piece](images/AIinFilms.png)
 
 ### Drawing or Sketch of Extended Piece
 
-![Sketch of Extended Piece](finalproject_storyboard.png)
+![Sketch of Extended Piece](images/finalproject_storyboard.png)
 
 ### Technical Details
 //   
