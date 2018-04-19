@@ -1,14 +1,23 @@
 # Final Project- Interactive Graphics and Critical Code
 
-Name:  
+Name:  Jo Kwon 
 
-Date:
+Date: April 19, 2018
 
-## Project: Title
+## Project: What is ART? 
 
 ### Conceptual Description
 
-Replace with a description of the critical / conceptual dimensions of your project. What is your project about? What issues/topics are you engaging with. What should the user take away from your piece?    
+I've been defining different terms throughoutthis semester and I believe that a crucial term in this class is "art." I want to explore the definitions of "art" from quotes from artists. I found 99 quotes from famous artists defining "art."  
+
+### Design (EXTRA EXPLANATION)
+[Color Selection (2018)](https://www.pantone.com/color-of-the-year-2018-tools-for-designers) 
+![PANTONE](/images/color2018.png)
+
+Violet: color(140, 109, 211)
+Peach: color(253, 122, 131)
+Lettuce Green: color(53, 204, 153)
+Yellow: color(242, 240, 161)
 
 ### Interaction Description
 
@@ -18,17 +27,18 @@ Replace with a description of the interactive dimensions of your project.  How d
 
 Do you intend to extend a piece that you've created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?
 
-![Previous Piece](previous_piece.png)
+![Previous Piece](AIinFilms.png)
 
 ### Drawing or Sketch of Extended Piece
 
-![Sketch of Extended Piece](extended_piece.png)
+![Sketch of Extended Piece](finalproject_storyboard.png)
 
 ### Technical Details
 //   
 Here you should give an overview of the technical aspects of your project:
 * Libraries your using
-* Hosting Platform (Heroku, Github Pages)
+* Hosting Platform
+[Jo's ART](https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html)
 * Explanation of your codebase  
 //
 
@@ -43,20 +53,3 @@ function draw(){
 
 }
 ```
-
-Link to your project's full code in this repository:  [https://github.com/duke-interactive-graphics/face-osc](https://github.com/duke-interactive-graphics/face-osc)
-
-
-# [Artificial Intelligence](https://kwonjo.github.io/visualization_interactivegraphics/)
-
-## How was this piece created?
-
-## 1. Artificial Intelligence
-
-## 2. [Color Selection (2018)](https://www.pantone.com/color-of-the-year-2018-tools-for-designers) 
-![PANTONE](/images/color2018.png)
-
-Violet: color(140, 109, 211)
-Peach: color(253, 122, 131)
-Lettuce Green: color(53, 204, 153)
-Yellow: color(242, 240, 161)
