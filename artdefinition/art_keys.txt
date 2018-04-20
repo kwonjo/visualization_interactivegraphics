@@ -1,10 +1,5 @@
-0	0.5	artist pablo work good greater mastery moore drawing god sees found salvador rediscover state veil senses pierre intrinsic limits happiness 
-1	0.5	van vincent paul vinci andy gardner finished feels degas real bacon heart beecher eraser deceiving newness artists step rousseau perfect 
-2	0.5	henry great painters object marc speech strong mistakes john free fear dips isn’t simply émile vonnegut working mcneill human rouault 
-3	0.5	picasso nature painting don't time dream practice child knowing wonderful living ideas edgar creativity andre collaboration reproduction lautrec progress places 
-4	0.5	art soul michelangelo create spot transform obsession dali brush preceive call essential beauty grows brings rothko kurt avoided listen brought 
-5	0.5	things painting matter makes it's emotions georgia david strokes there's cezanne die briefly novelty forward george granted widely badly durer 
-6	0.5	thing pictures henri robert man felt poetry live francis art passion called toulouse subject interesting stops jean-jacques imagination hughes talented 
-7	0.5	paint paints reality world love people warhol takes language sun mind feel words ward invent renoir justification prize problem true 
-8	0.5	make life making unknown important auguste feeling yellow o’keeffe boredom gide inevitable word flat hands brains miles study boundless loud 
-9	0.5	gogh leonardo chagall you'll it’s rodin courage define knocks theories seldom zola doubt long grandchild raphael limitless difficult knowing allowing 
+0	1	art picasso work reality greater people warhol perfect practice yellow transform mind takes collaboration eraser senses renoir pierre theories lautrec 
+1	1	paul vinci auguste georgia heart drawing gardner feeling mistakes feels sees there's feel found live salvador beecher ward state isn’t 
+2	1	van vincent paint things don't make life thing matter leonardo painters michelangelo mastery unknown chagall marc robert child man language 
+3	1	pablo nature time paints world making love great knowing it's emotions moore henry important create andy dream finished god strong 
+4	1	artist gogh painting soul good makes object spot sun speech strokes felt wonderful free living obsession o’keeffe francis creativity die 

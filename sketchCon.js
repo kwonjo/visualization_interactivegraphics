@@ -5,6 +5,7 @@ var mySound;
 var table;
 var button;
 var drops = [];
+var link;
 
 //total number of drops we want to use
 var totalDrops = 0;
@@ -19,19 +20,22 @@ function preload() {
 
 function setup(){
     createCanvas(windowWidth, 700);
+    textAlign(CENTER);
+    textFont(fontItalic);
+    textSize(30);
+    strokeWeight(1);
+    link = createA('https://aahvs.duke.edu/people/profile/jo-kwon', 'Go To Profile', '_blank');
+    //link.position(120, 350);
 }
 
 function draw(){
     background(0);
     image(img, 0, 10, img.width/3, img.height/3);
-    textAlign(CENTER);
-    textFont(fontItalic);
-    strokeWeight(1);
-    textSize(30);
+
     fill(140, 109, 211); //#8c6dd3 violet 
     var s = 'Jo Joungwon Kwon\n CMAC MA Student\n in Duke University\n ';   
     text(s, windowWidth/2, 50);
-    createA('https://aahvs.duke.edu/people/profile/jo-kwon', 'this is a link');
+    
     var t = 'jo.kwon@duke.edu\n https://aahvs.duke.edu/people/profile/jo-kwon'
     text(t, windowWidth/2, 200);
 
@@ -76,3 +80,4 @@ function Drop() {
       image(img, this.x, this.y, this.r*0.5, this.r*0.5);
     }
   }
+

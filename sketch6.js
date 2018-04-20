@@ -13,11 +13,11 @@ let cluster3;
 let cluster4;
 let cluster5;
 // 5 topics
-var bye;
-var struggle;
-var theo;
-var individual;
-var david;
+var ONE;
+var TWO;
+var THREE;
+var FOUR;
+var FIVE;
 
 
 // Boolean that indicates whether we draw connections or not
@@ -26,7 +26,7 @@ let showParticles = true;
 
 function preload(){
   //data
-  table = loadTable('data/ai_data.csv', 'csv', 'header');
+  table = loadTable('data/art_data.csv', 'csv', 'header');
   console.log(table);
   //music
   soundFormats('m4a'); 
@@ -47,22 +47,22 @@ function setup(){
   physics.setWorldBounds(new Rect(0, 0, width, height));
   // Spawn a new random graph
   // cluster = new Cluster(number of nodes, distance of connections, x, y);
-  cluster = new Cluster(20, 130, new Vec2D(330, 150), bye);
-  cluster2 = new Cluster(20, 230, new Vec2D(200, 450), struggle);
-  cluster3 = new Cluster(20, 150, new Vec2D(600, 200), theo);
-  cluster4 = new Cluster(20, 170, new Vec2D(900, 180), individual);
-  cluster5 = new Cluster(20, 160, new Vec2D(550, 460), david);
+  cluster = new Cluster(20, 130, new Vec2D(330, 150), ONE);
+  cluster2 = new Cluster(20, 230, new Vec2D(200, 450), TWO);
+  cluster3 = new Cluster(20, 150, new Vec2D(600, 200), THREE);
+  cluster4 = new Cluster(20, 170, new Vec2D(900, 180), FOUR);
+  cluster5 = new Cluster(20, 160, new Vec2D(550, 460), FIVE);
 }
 
 function loadData(){
     //Access the fields via their column name (or index)
     //var keyword = row.get("keyword");
-    bye = table.getColumn("Bye");
-    struggle = table.getColumn("Struggle");
-    theo = table.getColumn("Theo");
-    individual = table.getColumn("Individual");
-    david = table.getColumn("David");
-    console.log(bye)
+    bye = table.getColumn("ONE");
+    struggle = table.getColumn("TWO");
+    theo = table.getColumn("THREE");
+    individual = table.getColumn("FOUR");
+    david = table.getColumn("FIVE");
+    console.log(ONE);
 }
 
 function draw(){
@@ -111,9 +111,4 @@ function mousePressed(){
   } else {
     mySound.play();
   }
-}
-
-// piechart relocation
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
 }

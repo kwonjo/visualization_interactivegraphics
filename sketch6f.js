@@ -1,7 +1,8 @@
 var c;
  
 function setup() {
- 	createCanvas(windowWidth, 900);
+	createCanvas(windowWidth, 900);
+	c = color(0);
 }
  
 function draw()
@@ -10,7 +11,7 @@ function draw()
 	noStroke();
 	fill(253, 122, 131);
 	rect(0, 0, width, 50);
-	fill(0);
+	fill(255);
     text("Press the 'R' for Peach Pink paint", 10, 15);
     text("Press the 'G' for Lettuce Green paint", 10, 30);
     text("Press the 'P' for Purple paint", 10, 45);
