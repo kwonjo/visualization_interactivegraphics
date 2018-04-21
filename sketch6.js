@@ -1,9 +1,8 @@
 var x=0;
-var speed=1;
-var bubbles;
 var table;
 var fontItalic;
 var mySound;
+var img;
 // Reference to physics world
 let physics;
 // 5 clusters 
@@ -31,6 +30,8 @@ function preload(){
   mySound = loadSound('sound/askforlove.m4a');
   //font
   fontItalic = loadFont('images/typewriter.ttf');
+  //image
+  img =loadImage('images/vangogh3.jpg');
 }
 
 function setup(){
@@ -90,7 +91,11 @@ function draw(){
     cluster4.showConnections();
     cluster5.showConnections();
   }
+  if (mouseIsPressed) {
+    image(img, windowWidth/3, 0, img.width/2, img.height/2);
   }
+}
+
 
 // Key press commands
 function keyPressed() {
@@ -104,5 +109,5 @@ function keyPressed() {
     console.log('p pressed');
     if (!showParticles) showPhysics = true;
   } 
-  mySound.play();
+
 }

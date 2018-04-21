@@ -6,6 +6,7 @@ var table;
 var button;
 var drops = [];
 var link;
+var img;
 
 //total number of drops we want to use
 var totalDrops = 0;

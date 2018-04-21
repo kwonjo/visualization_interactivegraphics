@@ -1,6 +1,5 @@
 var x=0;
 var speed=1;
-var bubbles;
 var table;
 var fontItalic;
 var mySound;
