@@ -31,11 +31,11 @@ function preload(){
   //font
   fontItalic = loadFont('images/typewriter.ttf');
   //image
-  img =loadImage('images/vangogh3.jpg');
+  img =loadImage('images/artists.png');
 }
 
 function setup(){
-  createCanvas(windowWidth, 800);
+  createCanvas(1570, 780);
   //load data from art_data
   loadData();
   //sound looping
@@ -51,8 +51,8 @@ function setup(){
   // cluster = new Cluster(number of nodes, distance of connections, x, y);
   cluster = new Cluster(20, 150, new Vec2D(300, 150), ONE);//first
   cluster2 = new Cluster(20, 250, new Vec2D(250, 500), TWO); //second row first
-  cluster3 = new Cluster(20, 300, new Vec2D(650, 300), THREE); //first row second 
-  cluster4 = new Cluster(20, 220, new Vec2D(1350, 200), FOUR);
+  cluster3 = new Cluster(20, 300, new Vec2D(620, 300), THREE); //first row second 
+  cluster4 = new Cluster(20, 220, new Vec2D(1350, 200), FOUR); //first row third
   cluster5 = new Cluster(20, 350, new Vec2D(1050, 530), FIVE);
 }
 
@@ -92,7 +92,12 @@ function draw(){
     cluster5.showConnections();
   }
   if (mouseIsPressed) {
-    image(img, windowWidth/3, 0, img.width/2, img.height/2);
+    image(img, 0, 0, img.width/1.3, img.height/1.3);
+    //text
+    textSize(40);
+    var s = '“I want to touch people with my art.”';
+    fill(223,226,210);
+    text(s, 430, 0, 400, 400); 
   }
 }
 
