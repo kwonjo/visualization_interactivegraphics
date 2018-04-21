@@ -7,12 +7,12 @@ function Node(pos, tempData) {
   
     // Override the display method
     this.display = function(){
-      textSize(20);
+      textSize(23);
       textFont(fontItalic);
       textAlign(CENTER);
-      fill(253, 122, 131);
+      fill(242,105,104);
       noStroke();
-      strokeWeight(2);
+      strokeWeight(1);
       //ellipse(this.x, this.y, 50, 30);
       text(this.data, this.x, this.y) 
     }

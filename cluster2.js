@@ -31,8 +31,8 @@ function Cluster(n, d, center, tempData) {
 
   // Draw all the internal connections
   this.showConnections= function() {
-    stroke(153, 204, 153);
-    strokeWeight(1);
+    stroke(223,226,210);
+    strokeWeight(0.3);
     for (let i = 0; i < this.nodes.length - 1; i++) {
       for (let j = i + 1; j < this.nodes.length; j++) {
         line(this.nodes[i].x, this.nodes[i].y, this.nodes[j].x, this.nodes[j].y);

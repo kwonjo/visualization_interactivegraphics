@@ -18,8 +18,6 @@ var TWO;
 var THREE;
 var FOUR;
 var FIVE;
-
-
 // Boolean that indicates whether we draw connections or not
 let showPhysics = true;
 let showParticles = true;
@@ -36,39 +34,43 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, 800);
+  //load data from art_data
   loadData();
-
+  //sound looping
+  mySound.loop(); 
+  //instructions for display
   createP("'p' to display or hide particles<br>'c' to display or hide connections<br>");
 
-  // Initialize the physics
+  //Initialize the physics
   physics = new VerletPhysics2D();
   // Set the world's bounding box
   physics.setWorldBounds(new Rect(0, 0, width, height));
   // Spawn a new random graph
   // cluster = new Cluster(number of nodes, distance of connections, x, y);
-  cluster = new Cluster(20, 130, new Vec2D(330, 150), ONE);
-  cluster2 = new Cluster(20, 230, new Vec2D(200, 450), TWO);
-  cluster3 = new Cluster(20, 150, new Vec2D(600, 200), THREE);
-  cluster4 = new Cluster(20, 170, new Vec2D(900, 180), FOUR);
-  cluster5 = new Cluster(20, 160, new Vec2D(550, 460), FIVE);
+  cluster = new Cluster(20, 150, new Vec2D(300, 150), ONE);//first
+  cluster2 = new Cluster(20, 250, new Vec2D(250, 500), TWO); //second row first
+  cluster3 = new Cluster(20, 300, new Vec2D(650, 300), THREE); //first row second 
+  cluster4 = new Cluster(20, 220, new Vec2D(1350, 200), FOUR);
+  cluster5 = new Cluster(20, 350, new Vec2D(1050, 530), FIVE);
 }
 
 function loadData(){
     //Access the fields via their column name (or index)
     //var keyword = row.get("keyword");
-    bye = table.getColumn("ONE");
-    struggle = table.getColumn("TWO");
-    theo = table.getColumn("THREE");
-    individual = table.getColumn("FOUR");
-    david = table.getColumn("FIVE");
+    ONE = table.getColumn("ONE");
+    TWO = table.getColumn("TWO");
+    THREE = table.getColumn("THREE");
+    FOUR = table.getColumn("FOUR");
+    FIVE = table.getColumn("FIVE");
     console.log(ONE);
 }
 
 function draw(){
-  // Update the physics world
+  
+  //Update the physics world
   physics.update();
-  background(49, 25, 56); //dark violet
+  background(50,51,57); //moss
   // Update the physics world
   physics.update();
   // Display all points
@@ -102,13 +104,5 @@ function keyPressed() {
     console.log('p pressed');
     if (!showParticles) showPhysics = true;
   } 
-}
-
-// sound
-function mousePressed(){
-  if (mySound.isPlaying()){ //.isPlaying() returns a boolean
-    mySound.stop();
-  } else {
-    mySound.play();
-  }
+  mySound.play();
 }
