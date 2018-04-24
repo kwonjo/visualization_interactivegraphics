@@ -1,8 +1,16 @@
 var c;
- 
+var mySound;
+
+function preload(){
+	//music
+	soundFormats('m4a'); 
+	mySound = loadSound('sound/givemesomething.m4a');
+}
 function setup() {
 	createCanvas(windowWidth, 900);
 	c = color(0);
+	//sound looping
+	mySound.loop(); 
 }
  
 function draw()

@@ -64,14 +64,14 @@ function loadData(){
     THREE = table.getColumn("THREE");
     FOUR = table.getColumn("FOUR");
     FIVE = table.getColumn("FIVE");
-    console.log(ONE);
+    console.log(ONE); //show that data is loaded
 }
 
 function draw(){
   
   //Update the physics world
   physics.update();
-  background(50,51,57); //moss
+  background(50,51,57); //moss river
   // Update the physics world
   physics.update();
   // Display all points
@@ -96,11 +96,10 @@ function draw(){
     //text
     textSize(40);
     var s = '“I want to touch people with my art.”';
-    fill(223,226,210);
+    fill(223,226,210); //limestone
     text(s, 430, 0, 400, 400); 
   }
 }
-
 
 // Key press commands
 function keyPressed() {
