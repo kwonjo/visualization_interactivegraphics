@@ -14,6 +14,7 @@ I've been defining different terms such as happiness and artificial intelligence
 Two methods are mainly used for this piece. The first is text mining methods and the second is using p5.js for interactive graphics. 
 
 I used various approaches in text mining. 
+
 1st Step: Obtaining Data
 The data set I used was the 99 Inspirational Art Quotes from Famous Artists. 
 

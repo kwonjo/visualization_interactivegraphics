@@ -63,371 +63,220 @@
           </nav>
 
 <h3 id="title">What is ART?<br>
-  <h1>Final Project- Interactive Graphics and Critical Code</h1>
-  <p>Name:  Jo Kwon </p>
-  <p>Date: April 19, 2018 (revised on April 24, 2018)</p>
-  <h2><a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Project: What is art /ärt/?</a></h2>
-  <h3>Conceptual Description</h3>
-  <p>I've been defining different terms such as happiness and artificial intelligence(AI) throughout this semester and I believe that a crucial term in this class is "art." I wanted to explore the definitions of "art" from quotes from various artists. I found <a href="http://www.artpromotivate.com/2012/09/famous-inspirational-art-quotes.html">99 quotes</a> from famous artists defining "art." The concept of this piece is to define the vague term and understand the meaning of "art." Art will also be expressed and created through the user in the other sketch which is on the same tab.</p>
-  <p>Two methods are mainly used for this piece. The first is text mining methods and the second is using p5.js for interactive graphics. </p>
-  <h1>Final Project- Interactive Graphics and Critical Code</h1>
-  <p>Name:  Jo Kwon </p>
-  <p>Date: April 19, 2018 (revised on April 24, 2018)</p>
-  <h2><a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Project: What is art /ärt/?</a></h2>
-  <h3>Conceptual Description</h3>
-  <p>I've been defining different terms such as happiness and artificial intelligence(AI) throughout this semester and I believe that a crucial term in this class is "art." I wanted to explore the definitions of "art" from quotes from various artists. I found <a href="http://www.artpromotivate.com/2012/09/famous-inspirational-art-quotes.html">99 quotes</a> from famous artists defining "art." The concept of this piece is to define the vague term and understand the meaning of "art." Art will also be expressed and created through the user in the other sketch which is on the same tab.</p>
-  <p>Two methods are mainly used for this piece. The first is text mining methods and the second is using p5.js for interactive graphics. </p>
-  <p>I used various approaches in text mining. 
-  1st Step: Obtaining Data
+  <h2 id="-project-what-is-art-rt-https-kwonjo-github-io-visualization_interactivegraphics-sketch6-html-"><a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Project: What is art /ärt/?</a></h2>
+  <h3 id="conceptual-description">Conceptual Description</h3>
+  <p>I&#39;ve been defining different terms such as happiness and artificial intelligence(AI) throughout this semester and I believe that a crucial term in this class is &quot;art.&quot; I wanted to explore the definitions of &quot;art&quot; from quotes from various artists. I found <a href="http://www.artpromotivate.com/2012/09/famous-inspirational-art-quotes.html">99 quotes</a> from famous artists defining &quot;art.&quot; The concept of this piece is to define the vague term and understand the meaning of &quot;art.&quot; Art will also be expressed and created through the user in the other sketch which is on the same tab.</p>
+  <p>Two methods are mainly used for this piece. The first is text mining methods and the second is using p5.js for interactive graphics. I used various approaches in text mining.
+  <p>1st Step: Obtaining Data</p>
   The data set I used was the 99 Inspirational Art Quotes from Famous Artists. </p>
   <p>2nd Step: Text Cleaning and Exploratory Data Analysis with R</p>
-  <p><img alt="barplot" src="/images/artfre100.jpeg" /></p>
-  <p><img alt="wordcloud" src="/images/art_wordcloud.png" /></p>
-  <p>```r
+  <p><img src="/images/artfre100.jpeg" alt="barplot" width="900" height="800"></p>
+  <p><img src="/images/art_wordcloud.png" alt="wordcloud" width="500" height="500"></p>
+  <pre><code class="lang-r">
   library(tm)
   library(SnowballC)
   library(wordcloud)
-  library(RColorBrewer)</p>
-  <p>barplaot(d[1:100,]$freq, las = 3, names.arg = d[1:100,]$word,
-          col ="lightblue", main ="Most frequent Top 100 words",
-          ylab = "Word frequencies")</p>
-  <p>set.seed(1234)
-  png("wordcloud.png", width=12,height=8, units='in', res=300)
-  par(mar = rep(0, 4))
-  wordcloud(words = d$word, freq = d$freq, min.freq = 3,
-            max.words=100, scale=c(3, 0.5), random.order=F, rot.per= 0, 
-            colors=brewer.pal(8, "Dark2"))
-  ```</p>
+  library(RColorBrewer)
+  
+  barplot(d[<span class="hljs-number">1</span>:<span class="hljs-number">100</span>,]$freq, <span class="hljs-attr">las</span> = <span class="hljs-number">3</span>, names.<span class="hljs-attr">arg</span> = d[<span class="hljs-number">1</span>:<span class="hljs-number">100</span>,]$word,
+          <span class="hljs-attr">col</span> =<span class="hljs-string">"lightblue"</span>, <span class="hljs-attr">main</span> =<span class="hljs-string">"Most frequent Top 100 words"</span>,
+          <span class="hljs-attr">ylab</span> = <span class="hljs-string">"Word frequencies"</span>)
+  
+  set.seed(<span class="hljs-number">1234</span>)
+  png(<span class="hljs-string">"wordcloud.png"</span>, <span class="hljs-attr">width=12,height=8,</span> <span class="hljs-attr">units='in',</span> <span class="hljs-attr">res=300)</span>
+  par(<span class="hljs-attr">mar</span> = rep(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>))
+  wordcloud(<span class="hljs-attr">words</span> = d$word, <span class="hljs-attr">freq</span> = d$freq, min.<span class="hljs-attr">freq</span> = <span class="hljs-number">3</span>,
+            max.<span class="hljs-attr">words=100,</span> <span class="hljs-attr">scale=c(3,</span> <span class="hljs-number">0.5</span>), random.<span class="hljs-attr">order=F,</span> rot.<span class="hljs-attr">per=</span> <span class="hljs-number">0</span>, 
+            <span class="hljs-attr">colors=brewer.pal(8,</span> <span class="hljs-string">"Dark2"</span>))
+  </code></pre>
   <p>3rd Step: Topic Modeling with Mallet and LDA</p>
   <p>Results of Topic Modeling with Mallet</p>
-  <p><img alt="mallet5" src="/images/art_mallet5.png" /></p>
+  <p><img src="/images/art_mallet5.png" alt="mallet5" height="480" width="480"></p>
   <p>Results of Topic Modeling with LDA</p>
-  <p><img alt="LDA5" src="/images/art_LDA5.png" /></p>
-  <p>```r</p>
-  <h2>Run Latent Dirichlet Allocation (LDA) using Gibbs Sampling</h2>
-  <h1>set burn in</h1>
-  <p>burnin &lt;-1000</p>
-  <h1>set iterations</h1>
-  <p>iter&lt;-2000</p>
-  <h1>thin the spaces between samples</h1>
-  <p>thin &lt;- 500</p>
-  <h1>set random starts at 5</h1>
-  <p>nstart &lt;-5</p>
-  <h1>use random integers as seed</h1>
-  <p>seed &lt;- list(254672,109,122887,145629037,3)</p>
-  <h1>return the highest probability as the result</h1>
-  <p>best &lt;-TRUE</p>
-  <h1>set number of topics</h1>
-  <p>k &lt;-5</p>
-  <h1>run the LDA model</h1>
-  <p>ldaOut &lt;- LDA(dtm, k, method="Gibbs", control=
+  <p><img src="/images/art_LDA5.png" alt="LDA5" height="480" width="480"></p>
+  <pre><code class="lang-r">
+  ##Run Latent Dirichlet Allocation (LDA) using Gibbs Sampling
+  #set burn <span class="hljs-keyword">in</span>
+  burnin &lt;-<span class="hljs-number">1000</span>
+  #set iterations
+  iter&lt;-<span class="hljs-number">2000</span>
+  #thin the spaces between samples
+  thin &lt;- <span class="hljs-number">500</span>
+  #set random starts at <span class="hljs-number">5</span>
+  nstart &lt;-<span class="hljs-number">5</span>
+  #use random integers <span class="hljs-keyword">as</span> seed 
+  seed &lt;- list(<span class="hljs-number">254672</span>,<span class="hljs-number">109</span>,<span class="hljs-number">122887</span>,<span class="hljs-number">145629037</span>,<span class="hljs-number">3</span>)
+  # return the highest probability <span class="hljs-keyword">as</span> the result
+  best &lt;-TRUE
+  #set number <span class="hljs-keyword">of</span> topics 
+  k &lt;-<span class="hljs-number">5</span>
+  #run the LDA model
+  ldaOut &lt;- LDA(dtm, k, method=<span class="hljs-string">"Gibbs"</span>, control=
                   list(nstart=nstart, seed = seed, best=best, burnin = burnin, iter = iter, thin=thin))
-  terms(ldaOut, 20)
-  ldaOut.terms &lt;- as.matrix(terms(ldaOut,10))</p>
-  <h1>view the topic assignment for each document</h1>
-  <p>topics(ldaOut)</p>
-  <h1>create a matrix and write to csv</h1>
-  <p>ldaOut.topics &lt;-as.matrix(topics(ldaOut))
-  write.csv(ldaOut.topics,file=paste("LDAGibbs",k,"DocsToTopics.csv"))</p>
-  <h1>Find probabilities associated with each topic assignment</h1>
-  <p>topicProbabilities &lt;- as.data.frame(ldaOut@gamma) 
-  write.csv(topicProbabilities,file=paste("LDAGibbs",k,"TopicProbabilities.csv"))</p>
-  <h1>investigate topic probabilities data.frame</h1>
-  <p>summary(topicProbabilities)
+  terms(ldaOut, <span class="hljs-number">20</span>)
+  ldaOut.terms &lt;- <span class="hljs-keyword">as</span>.matrix(terms(ldaOut,<span class="hljs-number">10</span>))
+  #view the topic assignment for each document
+  topics(ldaOut)
+  #create a matrix and write to csv
+  ldaOut.topics &lt;-<span class="hljs-keyword">as</span>.matrix(topics(ldaOut))
+  write.csv(ldaOut.topics,file=paste(<span class="hljs-string">"LDAGibbs"</span>,k,<span class="hljs-string">"DocsToTopics.csv"</span>))
+  
+  #Find probabilities associated <span class="hljs-keyword">with</span> each topic assignment
+  topicProbabilities &lt;- <span class="hljs-keyword">as</span>.data.frame(ldaOut@gamma) 
+  write.csv(topicProbabilities,file=paste(<span class="hljs-string">"LDAGibbs"</span>,k,<span class="hljs-string">"TopicProbabilities.csv"</span>))
+  #investigate topic probabilities data.frame
+  summary(topicProbabilities)
   str(topicProbabilities)
-  ```
-  4th Step: Visualize Data with p5.js</p>
+  </code></pre>
+  <p>4th Step: Visualize Data with p5.js</p>
   <p>Network clouds are created with p5.js and the codes are explained later in the writing. </p>
   <p>5th Step: Interaction and Interpretation by Users </p>
   <p>The topic modeling results do not make a lot of sense and this is the limitation of topic modeling. Art is also defined with various words and ultimately the defining art is up to the user. The user may agree or disagree with the five topics and they will also have the opportunity to express their thoughts in the second piece. </p>
-  <h3>Interaction Description</h3>
+  <h3 id="interaction-description">Interaction Description</h3>
   <p>The piece includes two sketches. The first one includes the five topics of the definition of art from the 99 quotes. The network word cloud will work with the webs. The interaction is seeing the sketch. When the mouse is on top of a topic, one of an image from an artist in the topic will be shown. The second one enables users to draw whatever they want with three pantone colors to define art. Different colors of strokes can be used for the drawing. With a large screen, people will be able to see the texts and the images closely. 
   The intended user for the piece are people who are interested in art. The users receive information of art and also express art on their own. Various interactions with the piece allows users to better understand the meaning of art and how it is challenging to define art overall. Interacting with the text information and being able to paint with strokes which is abstract drawings are requiring the users to interact with the concept of art in different approaches. The user uses different methods and they will be able to contemplate what art means.  </p>
-  <h3>Design (EXTRA EXPLANATION)</h3>
-  <h4>No. 1 Sketch</h4>
-  <p><img alt="colors" src="/images/fin_colors.jpg" /></p>
-  <p>Ruby Grapefuit: #F26968, color(242,105,104)</p>
-  <p>Limestone: #6CBF84, color(223,226,210)</p>
-  <p>Moss River: #323339, color(50,51,57)</p>
-  <h4>No. 2 Sketch</h4>
-  <p><a href="https://www.pantone.com/color-of-the-year-2018-tools-for-designers">Color Selection PANTONE (2018)</a> </p>
-  <p><img alt="PANTONE" src="/images/color2018.png" /></p>
-  <p>Purple: color(140, 109, 211)</p>
-  <p>Peach: color(253, 122, 131)</p>
-  <p>Lettuce Green: color(53, 204, 153)</p>
-  <h3>Extension</h3>
-  <p>Do you intend to extend a piece that you've created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?</p>
-  <p>I am extending my piece from second and third piece. First of all, I am using text mining methods for the piece with R, Mallet, and LDA for exploratory data analysis. I used the results of the topic modeling. Secondly, I am using the pantone colors in the second sketch for the user to create their own art which I have used in both previous works. The elements that are adding to the previous works are the second sketch for user interaction for defining art and images of artists popping up when the mouse is clicked. </p>
-  <p><img alt="Previous Piece" src="/images/project3.png" /></p>
-  <h3>Drawing or Sketch of Extended Piece</h3>
-  <p><img alt="Sketch of Extended Piece" src="/images/finalproject_storyboard.jpg" /></p>
-  <h3>Technical Details</h3>
-  <h4>No. 1 Sketch</h4>
-  <ul>
-  <li>
-  <p>Libraries
-  p5.dom.js
-  p5.sound.js</p>
-  </li>
-  <li>
-  <p>Hosting Platform
-  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo's ART</a></p>
-  </li>
-  <li>
-  <p>Explanation of your codebase  </p>
-  </li>
-  <li>
-  <p>Load Data
-  The table of the data is loaded into p5.js. </p>
-  </li>
-  <li>
-  <p>Load Sound
-  The short sound clip by Joey Pecoraro's <em>Ask For Love</em> is loaded. </p>
-  </li>
-  <li>
-  <p>Load Font
-  Typewriter font is loaded on p5.js. </p>
-  </li>
-  <li>
-  <p>Clusters and nodes
-  Daniel Shiffman's The Nature of Code's physics libraries were used for creating clusters and nodes. </p>
-  </li>
-  <li>
-  <p>Mouse Is Pressed 
-  When mouse is pressed, the image appears on the screen. </p>
-  </li>
-  </ul>
-  <p>```js
-  function preload(){
-    //data
-    table = loadTable('data/.csv', 'csv', 'header');
-    //music
-    soundFormats('m4a'); 
-    mySound = loadSound('sound/askforlove.m4a');
-    //font
-    fontItalic = loadFont('images/typewriter.ttf');
-  }</p>
-  <p>function loadData(){
-      //Access the fields via their column name (or index)
-      //var keyword = row.get("keyword");
-      ONE = table.getColumn("ONE");
-      TWO = table.getColumn("TWO");
-      THREE = table.getColumn("THREE");
-      FOUR = table.getColumn("FOUR");
-      FIVE = table.getColumn("FIVE");
-      console.log(ONE);
-  }</p>
-  <p>function draw(){</p>
-  <p>//Update the physics world
-    physics.update();
-    background(50,51,57); //moss
-    // Update the physics world
-    physics.update();
-    // Display all points
-    if (showParticles) {
-      cluster.display();
-      cluster2.display();
-      cluster3.display();
-      cluster4.display();
-      cluster5.display();
-    }</p>
-  <p>// If we want to see the physics
-    if (showPhysics) {
-      cluster.showConnections();
-      cluster2.showConnections();
-      cluster3.showConnections();
-      cluster4.showConnections();
-      cluster5.showConnections();
-    }
-    if (mouseIsPressed) {
-      image(img, 0, 0, img.width/1.3, img.height/1.3);
-      //text
-      textSize(40);
-      var s = '“I want to touch people with my art.”';
-      fill(223,226,210);
-      text(s, 430, 0, 400, 400); 
-    }
-  }</p>
-  <p>```</p>
-  <h4>No. 1 Sketch</h4>
-  <ul>
-  <li>
-  <p>Libraries
-  p5.dom.js
-  p5.sound.js</p>
-  </li>
-  <li>
-  <p>Hosting Platform
-  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo's ART</a></p>
-  </li>
-  <li>
-  <p>Explanation of your codebase  </p>
-  </li>
-  <li>
-  <p>Load Sound
-  The short sound clip by Joey Pecoraro's <em>Give Me Something</em> is loaded. This song is chosen to tell the user to give me something that defines “art.”</p>
-  </li>
-  <li>
-  <p>Key Pressed
-  This enables the users to change colors of their color strokes between R(peach), G(lettuce green), and P(purple).  </p>
-  </li>
-  </ul>
-  <p>```js
-  function mouseDragged() 
-  { 
-      strokeWeight(10);
-      stroke(c);
-      line(mouseX, mouseY, pmouseX, pmouseY);
-  }</p>
-  <p>function keyPressed()
-  {
-      if(key == 'r' || key == 'R')
-      {
-          c = color(253, 122, 131);
-      }
-      if(key == 'g' || key == 'G')
-      {
-          c = color(153, 204, 153);
-      }
-      if(key == 'p' || key == 'P')
-      {
-          c = color(140, 109, 211);
-      }
-  }
-  ```</p>
-  <p>3rd Step: Topic Modeling with Mallet and LDA</p>
-  <p>4th Step: Visualize Data with p5.js</p>
-  <p>5th Step: Interaction and Interpretation by Users </p>
-  <h3>Interaction Description</h3>
-  <p>The piece includes two sketches. The first one includes the five topics of the definition of art from the 99 quotes. The network word cloud will work with the webs. The interaction is seeing the sketch. When the mouse is on top of a topic, one of an image from an artist in the topic will be shown. The second one enables users to draw whatever they want with three pantone colors to define art. Different colors of strokes can be used for the drawing. With a large screen, people will be able to see the texts and the images closely. 
-  The intended user for the piece are people who are interested in art. The users receive information of art and also express art on their own. Various interactions with the piece allows users to better understand the meaning of art and how it is challenging to define art overall. Interacting with the text information and being able to paint with strokes which is abstract drawings are requiring the users to interact with the concept of art in different approaches. The user uses different methods and they will be able to contemplate what art means.  </p>
-  <h3>Design (EXTRA EXPLANATION)</h3>
-  <h4>No. 1 Sketch</h4>
-  <p><img alt="colors" src="/images/fin_colors.jpg" /></p>
-  <p>Ruby Grapefuit: #F26968, color(242,105,104)
-  Limestone: #6CBF84, color(223,226,210)
+  <h3 id="design-extra-explanation-">Design (EXTRA EXPLANATION)</h3>
+  <h4 id="no-1-sketch">No. 1 Sketch</h4>
+  <p><img src="/images/fin_colors.jpg" alt="colors" width="400" height="400" ></p>
+  <p>Ruby Grapefuit: #F26968, color(242,105,104)<br>
+  Limestone: #6CBF84, color(223,226,210)<br>
   Moss River: #323339, color(50,51,57)</p>
-  <h4>No. 2 Sketch</h4>
+  <h4 id="no-2-sketch">No. 2 Sketch</h4>
   <p><a href="https://www.pantone.com/color-of-the-year-2018-tools-for-designers">Color Selection PANTONE (2018)</a> </p>
-  <p><img alt="PANTONE" src="/images/color2018.png" /></p>
-  <p>Purple: color(140, 109, 211)
-  Peach: color(253, 122, 131)
+  <p><img src="/images/color2018.png" alt="PANTONE" width="400" height="350" ></p>
+  <p>Purple: color(140, 109, 211)<br>
+  Peach: color(253, 122, 131)<br>
   Lettuce Green: color(53, 204, 153)</p>
-  <h3>Extension</h3>
-  <p>Do you intend to extend a piece that you've created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?</p>
+  <h3 id="extension">Extension</h3>
+  <p>Do you intend to extend a piece that you&#39;ve created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?</p>
   <p>I am extending my piece from second and third piece. First of all, I am using text mining methods for the piece with R, Mallet, and LDA for exploratory data analysis. I used the results of the topic modeling. Secondly, I am using the pantone colors in the second sketch for the user to create their own art which I have used in both previous works. The elements that are adding to the previous works are the second sketch for user interaction for defining art and images of artists popping up when the mouse is clicked. </p>
-  <p><img alt="Previous Piece" src="/images/project3.png" /></p>
-  <h3>Technical Details</h3>
-  <h4>No. 1 Sketch</h4>
+  <p><img src="/images/project3.png" alt="Previous Piece" width="900" height="500"></p>
+  <h3 id="drawing-or-sketch-of-extended-piece">Drawing or Sketch of Extended Piece</h3>
+  <h3 id="technical-details">Technical Details</h3>
+  <h4 id="no-1-sketch">No. 1 Sketch</h4>
   <ul>
-  <li>
-  <p>Libraries
+  <li><p>Libraries
   p5.dom.js
   p5.sound.js</p>
   </li>
-  <li>
-  <p>Hosting Platform
-  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo's ART</a></p>
+  <li><p>Hosting Platform
+  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo&#39;s ART</a></p>
   </li>
-  <li>
-  <p>Explanation of your codebase  </p>
+  <li><p>Explanation of your codebase  </p>
   </li>
-  <li>
-  <p>Load Data
+  <li><p>Load Data
   The table of the data is loaded into p5.js. </p>
   </li>
-  <li>
-  <p>Load Sound
-  The short sound clip by Joey Pecoraro's <em>Ask For Love</em> is loaded. </p>
+  <li><p>Load Sound
+  The short sound clip by Joey Pecoraro&#39;s <em>Ask For Love</em> is loaded. </p>
   </li>
-  <li>
-  <p>Load Font
+  <li><p>Load Font
   Typewriter font is loaded on p5.js. </p>
   </li>
-  <li>
-  <p>Clusters and nodes
-  Daniel Shiffman's The Nature of Code's physics libraries were used for creating clusters and nodes. </p>
+  <li><p>Clusters and nodes
+  Daniel Shiffman&#39;s The Nature of Code&#39;s physics libraries were used for creating clusters and nodes. </p>
   </li>
-  <li>
-  <p>Mouse Is Pressed 
+  <li><p>Mouse Is Pressed 
   When mouse is pressed, the image appears on the screen. </p>
   </li>
   </ul>
-  <p>```js
-  function preload(){
-    //data
-    table = loadTable('data/.csv', 'csv', 'header');
-    //music
+  <pre><code class="lang-js">
+    function preload(){
+    <span class="hljs-comment">//data</span>
+    <span class="hljs-keyword">table</span> = loadTable('data/.csv', 'csv', 'header');
+    <span class="hljs-comment">//music</span>
     soundFormats('m4a'); 
     mySound = loadSound('sound/askforlove.m4a');
-    //font
+    <span class="hljs-comment">//font</span>
     fontItalic = loadFont('images/typewriter.ttf');
-  }</p>
-  <p>function loadData(){
-      //Access the fields via their column name (or index)
-      //var keyword = row.get("keyword");
-      ONE = table.getColumn("ONE");
-      TWO = table.getColumn("TWO");
-      THREE = table.getColumn("THREE");
-      FOUR = table.getColumn("FOUR");
-      FIVE = table.getColumn("FIVE");
-      console.log(ONE);
-  }</p>
-  <p>function draw(){</p>
-  <p>//Update the physics world
-    physics.update();
-    background(50,51,57); //moss
-    // Update the physics world
-    physics.update();
-    // Display all points
-    if (showParticles) {
-      cluster.display();
-      cluster2.display();
-      cluster3.display();
-      cluster4.display();
-      cluster5.display();
-    }</p>
-  <p>// If we want to see the physics
-    if (showPhysics) {
-      cluster.showConnections();
+    }
+  
+    function loadData(){
+      <span class="hljs-comment">//Access the fields via their column name (or index)</span>
+      <span class="hljs-comment">//var keyword = row.get("keyword");</span>
+      <span class="hljs-keyword">ONE</span> = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"ONE"</span>);
+      <span class="hljs-keyword">TWO</span> = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"TWO"</span>);
+      THREE = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"THREE"</span>);
+      FOUR = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"FOUR"</span>);
+      FIVE = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"FIVE"</span>);
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">ONE</span>);
+    }
+  
+    function draw(){
+  
+    <span class="hljs-comment">//Update the physics world</span>
+    physics.<span class="hljs-keyword">update</span>();
+    background(50,51,57); <span class="hljs-comment">//moss</span>
+    <span class="hljs-comment">// Update the physics world</span>
+    physics.<span class="hljs-keyword">update</span>();
+    <span class="hljs-comment">// Display all points</span>
+    <span class="hljs-keyword">if</span> (showParticles) {
+      <span class="hljs-keyword">cluster</span>.<span class="hljs-keyword">display</span>();
+      cluster2.<span class="hljs-keyword">display</span>();
+      cluster3.<span class="hljs-keyword">display</span>();
+      cluster4.<span class="hljs-keyword">display</span>();
+      cluster5.<span class="hljs-keyword">display</span>();
+    }
+  
+    <span class="hljs-comment">// If we want to see the physics</span>
+    <span class="hljs-keyword">if</span> (showPhysics) {
+      <span class="hljs-keyword">cluster</span>.showConnections();
       cluster2.showConnections();
       cluster3.showConnections();
       cluster4.showConnections();
       cluster5.showConnections();
     }
-    if (mouseIsPressed) {
+    <span class="hljs-keyword">if</span> (mouseIsPressed) {
       image(img, 0, 0, img.width/1.3, img.height/1.3);
-      //text
+      <span class="hljs-comment">//text</span>
       textSize(40);
-      var s = '“I want to touch people with my art.”';
+      <span class="hljs-keyword">var</span> s = '“I want to touch people with my art.”';
       fill(223,226,210);
       text(s, 430, 0, 400, 400); 
     }
-  }</p>
-  <p>```</p>
-  <h4>No. 1 Sketch</h4>
+    }
+  </code></pre>
+  <h4 id="no-2-sketch">No. 2 Sketch</h4>
   <ul>
-  <li>
-  <p>Libraries
+  <li><p>Libraries
   p5.dom.js
   p5.sound.js</p>
   </li>
-  <li>
-  <p>Hosting Platform
-  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo's ART</a></p>
+  <li><p>Hosting Platform
+  <a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Jo&#39;s ART</a></p>
   </li>
-  <li>
-  <p>Explanation of your codebase  </p>
+  <li><p>Explanation of your codebase  </p>
   </li>
-  <li>
-  <p>Load Sound
-  The short sound clip by Joey Pecoraro's <em>Give Me Something</em> is loaded. This song is chosen to tell the user to give me something that defines “art.”</p>
+  <li><p>Load Sound
+  The short sound clip by Joey Pecoraro&#39;s <em>Give Me Something</em> is loaded. This song is chosen to tell the user to give me something that defines “art.”</p>
   </li>
-  <li>
-  <p>Key Pressed
+  <li><p>Key Pressed
   This enables the users to change colors of their color strokes between R(peach), G(lettuce green), and P(purple).  </p>
   </li>
   </ul>
+  <pre><code class="lang-js">
+    function <span class="hljs-built_in">mouseDragged</span>() 
+    { 
+      <span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">10</span>);
+      <span class="hljs-built_in">stroke</span>(c);
+      <span class="hljs-built_in">line</span>(<span class="hljs-built_in">mouseX</span>, <span class="hljs-built_in">mouseY</span>, <span class="hljs-built_in">pmouseX</span>, <span class="hljs-built_in">pmouseY</span>);
+    }
   
+    function <span class="hljs-built_in">keyPressed</span>()
+    {
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'r'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'R'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">253</span>, <span class="hljs-number">122</span>, <span class="hljs-number">131</span>);
+      }
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'g'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'G'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">153</span>, <span class="hljs-number">204</span>, <span class="hljs-number">153</span>);
+      }
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'p'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'P'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">140</span>, <span class="hljs-number">109</span>, <span class="hljs-number">211</span>);
+      }
+    }
+  </code></pre>
 </body>
 </html> 
