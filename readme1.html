@@ -23,7 +23,7 @@ library(tm)
 library(SnowballC)
 library(wordcloud)
 library(RColorBrewer)</p>
-<p>barplot(d[1:100,]$freq, las = 3, names.arg = d[1:100,]$word,
+<p>barplaot(d[1:100,]$freq, las = 3, names.arg = d[1:100,]$word,
         col ="lightblue", main ="Most frequent Top 100 words",
         ylab = "Word frequencies")</p>
 <p>set.seed(1234)
@@ -207,29 +207,30 @@ The short sound clip by Joey Pecoraro's <em>Give Me Something</em> is loaded. Th
 This enables the users to change colors of their color strokes between R(peach), G(lettuce green), and P(purple).  </p>
 </li>
 </ul>
-<p>```js
-function mouseDragged() 
-{ 
-    strokeWeight(10);
-    stroke(c);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-}</p>
-<p>function keyPressed()
-{
-    if(key == 'r' || key == 'R')
-    {
-        c = color(253, 122, 131);
-    }
-    if(key == 'g' || key == 'G')
-    {
-        c = color(153, 204, 153);
-    }
-    if(key == 'p' || key == 'P')
-    {
-        c = color(140, 109, 211);
-    }
-}
-```</p>
+<pre><code class="lang-js">function <span class="hljs-built_in">mouseDragged</span>() 
+  { 
+      <span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">10</span>);
+      <span class="hljs-built_in">stroke</span>(c);
+      <span class="hljs-built_in">line</span>(<span class="hljs-built_in">mouseX</span>, <span class="hljs-built_in">mouseY</span>, <span class="hljs-built_in">pmouseX</span>, <span class="hljs-built_in">pmouseY</span>);
+  }
+  
+  function <span class="hljs-built_in">keyPressed</span>()
+  {
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'r'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'R'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">253</span>, <span class="hljs-number">122</span>, <span class="hljs-number">131</span>);
+      }
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'g'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'G'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">153</span>, <span class="hljs-number">204</span>, <span class="hljs-number">153</span>);
+      }
+      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">key</span> == <span class="hljs-string">'p'</span> || <span class="hljs-built_in">key</span> == <span class="hljs-string">'P'</span>)
+      {
+          c = <span class="hljs-built_in">color</span>(<span class="hljs-number">140</span>, <span class="hljs-number">109</span>, <span class="hljs-number">211</span>);
+      }
+  }
+  </code></pre>
+  
 <p>3rd Step: Topic Modeling with Mallet and LDA</p>
 <p>4th Step: Visualize Data with p5.js</p>
 <p>5th Step: Interaction and Interpretation by Users </p>
@@ -288,58 +289,62 @@ Daniel Shiffman's The Nature of Code's physics libraries were used for creating 
 When mouse is pressed, the image appears on the screen. </p>
 </li>
 </ul>
-<p>```js
-function preload(){
-  //data
-  table = loadTable('data/.csv', 'csv', 'header');
-  //music
+<pre><code class="lang-js">function preload(){
+  <span class="hljs-comment">//data</span>
+  <span class="hljs-keyword">table</span> = loadTable('data/.csv', 'csv', 'header');
+  <span class="hljs-comment">//music</span>
   soundFormats('m4a'); 
   mySound = loadSound('sound/askforlove.m4a');
-  //font
+  <span class="hljs-comment">//font</span>
   fontItalic = loadFont('images/typewriter.ttf');
-}</p>
-<p>function loadData(){
-    //Access the fields via their column name (or index)
-    //var keyword = row.get("keyword");
-    ONE = table.getColumn("ONE");
-    TWO = table.getColumn("TWO");
-    THREE = table.getColumn("THREE");
-    FOUR = table.getColumn("FOUR");
-    FIVE = table.getColumn("FIVE");
-    console.log(ONE);
-}</p>
-<p>function draw(){</p>
-<p>//Update the physics world
-  physics.update();
-  background(50,51,57); //moss
-  // Update the physics world
-  physics.update();
-  // Display all points
-  if (showParticles) {
-    cluster.display();
-    cluster2.display();
-    cluster3.display();
-    cluster4.display();
-    cluster5.display();
-  }</p>
-<p>// If we want to see the physics
-  if (showPhysics) {
-    cluster.showConnections();
+}
+
+function loadData(){
+    <span class="hljs-comment">//Access the fields via their column name (or index)</span>
+    <span class="hljs-comment">//var keyword = row.get("keyword");</span>
+    <span class="hljs-keyword">ONE</span> = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"ONE"</span>);
+    <span class="hljs-keyword">TWO</span> = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"TWO"</span>);
+    THREE = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"THREE"</span>);
+    FOUR = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"FOUR"</span>);
+    FIVE = <span class="hljs-keyword">table</span>.getColumn(<span class="hljs-string">"FIVE"</span>);
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">ONE</span>);
+}
+
+function draw(){
+
+  <span class="hljs-comment">//Update the physics world</span>
+  physics.<span class="hljs-keyword">update</span>();
+  background(50,51,57); <span class="hljs-comment">//moss</span>
+  <span class="hljs-comment">// Update the physics world</span>
+  physics.<span class="hljs-keyword">update</span>();
+  <span class="hljs-comment">// Display all points</span>
+  <span class="hljs-keyword">if</span> (showParticles) {
+    <span class="hljs-keyword">cluster</span>.<span class="hljs-keyword">display</span>();
+    cluster2.<span class="hljs-keyword">display</span>();
+    cluster3.<span class="hljs-keyword">display</span>();
+    cluster4.<span class="hljs-keyword">display</span>();
+    cluster5.<span class="hljs-keyword">display</span>();
+  }
+
+  <span class="hljs-comment">// If we want to see the physics</span>
+  <span class="hljs-keyword">if</span> (showPhysics) {
+    <span class="hljs-keyword">cluster</span>.showConnections();
     cluster2.showConnections();
     cluster3.showConnections();
     cluster4.showConnections();
     cluster5.showConnections();
   }
-  if (mouseIsPressed) {
+  <span class="hljs-keyword">if</span> (mouseIsPressed) {
     image(img, 0, 0, img.width/1.3, img.height/1.3);
-    //text
+    <span class="hljs-comment">//text</span>
     textSize(40);
-    var s = '“I want to touch people with my art.”';
+    <span class="hljs-keyword">var</span> s = '“I want to touch people with my art.”';
     fill(223,226,210);
     text(s, 430, 0, 400, 400); 
   }
-}</p>
-<p>```</p>
+}
+</code></pre>
+
 <h4>No. 1 Sketch</h4>
 <ul>
 <li>
@@ -362,4 +367,27 @@ The short sound clip by Joey Pecoraro's <em>Give Me Something</em> is loaded. Th
 <p>Key Pressed
 This enables the users to change colors of their color strokes between R(peach), G(lettuce green), and P(purple).  </p>
 </li>
+<pre><code class="js language-js">function mouseDragged() 
+  { 
+      strokeWeight(10);
+      stroke(c);
+      line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+  
+  function keyPressed()
+  {
+      if(key == 'r' || key == 'R')
+      {
+          c = color(253, 122, 131);
+      }
+      if(key == 'g' || key == 'G')
+      {
+          c = color(153, 204, 153);
+      }
+      if(key == 'p' || key == 'P')
+      {
+          c = color(140, 109, 211);
+      }
+  }
+  </code></pre>
 </ul>
