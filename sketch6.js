@@ -35,7 +35,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(1570, 780);
+  createCanvas(1590, 780);
   //load data from art_data
   loadData();
   //sound looping

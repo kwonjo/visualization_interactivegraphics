@@ -63,9 +63,16 @@
           </nav>
 
 <h3 id="title">What is ART?<br>
-  <h2 id="-project-what-is-art-rt-https-kwonjo-github-io-visualization_interactivegraphics-sketch6-html-"><a href="https://kwonjo.github.io/visualization_interactivegraphics/sketch6.html">Project: What is art /ärt/?</a></h2>
+  <p><img src="images/art.jpeg" alt="ART" width="190" height="190"></p>
   <h3 id="conceptual-description">Conceptual Description</h3>
+  <h4 id="What">What is the piece about?</h4>
   <p>I&#39;ve been defining different terms such as happiness and artificial intelligence(AI) throughout this semester and I believe that a crucial term in this class is &quot;art.&quot; I wanted to explore the definitions of &quot;art&quot; from quotes from various artists. I found <a href="http://www.artpromotivate.com/2012/09/famous-inspirational-art-quotes.html">99 quotes</a> from famous artists defining &quot;art.&quot; The concept of this piece is to define the vague term and understand the meaning of &quot;art.&quot; Art will also be expressed and created through the user in the other sketch which is on the same tab.</p>
+  <h4 id="Why">Why do I have a second piece for interaction?</h4>
+  <p>Art is perceived differently to everyone. People have different interpretations of art and the meaning of art can vary greatly such as fairy tales are read differently from every child.</p>
+  <em>&ldquo;As with all great art, the fairy tale's deepest meaning will be different for each person,
+  and different for the same person at various moments in his life. &rdquo;</em>
+  <p>by Bruno Bettelheim, <em>The Uses of Enchantment: The Meaning and Importance of Fairy Tales</em></p>
+  <h4 id="How">How did I create the piece?</h4>
   <p>Two methods are mainly used for this piece. The first is text mining methods and the second is using p5.js for interactive graphics. I used various approaches in text mining.
   <p>1st Step: Obtaining Data</p>
   The data set I used was the 99 Inspirational Art Quotes from Famous Artists. </p>
@@ -90,6 +97,10 @@
             <span class="hljs-attr">colors=brewer.pal(8,</span> <span class="hljs-string">"Dark2"</span>))
   </code></pre>
   <p>3rd Step: Topic Modeling with Mallet and LDA</p>
+  <p>Why am I using five topics?</p>
+  <p>
+  George A. Miller states that human’s memory capacity can obtain from five to nine objects at once. As a result, I want people to capture in a short time that five topics existed and have the overall sense of what each topic is representing.  
+  </p>
   <p>Results of Topic Modeling with Mallet</p>
   <p><img src="images/art_mallet5.png" alt="mallet5" height="480" width="480"></p>
   <p>Results of Topic Modeling with LDA</p>
@@ -132,26 +143,32 @@
   <p>Network clouds are created with p5.js and the codes are explained later in the writing. </p>
   <p>5th Step: Interaction and Interpretation by Users </p>
   <p>The topic modeling results do not make a lot of sense and this is the limitation of topic modeling. Art is also defined with various words and ultimately the defining art is up to the user. The user may agree or disagree with the five topics and they will also have the opportunity to express their thoughts in the second piece. </p>
-  <h3 id="interaction-description">Interaction Description</h3>
+  <h3>Interaction Description</h3>
   <p>The piece includes two sketches. The first one includes the five topics of the definition of art from the 99 quotes. The network word cloud will work with the webs. The interaction is seeing the sketch. When the mouse is on top of a topic, one of an image from an artist in the topic will be shown. The second one enables users to draw whatever they want with three pantone colors to define art. Different colors of strokes can be used for the drawing. With a large screen, people will be able to see the texts and the images closely. 
   The intended user for the piece are people who are interested in art. The users receive information of art and also express art on their own. Various interactions with the piece allows users to better understand the meaning of art and how it is challenging to define art overall. Interacting with the text information and being able to paint with strokes which is abstract drawings are requiring the users to interact with the concept of art in different approaches. The user uses different methods and they will be able to contemplate what art means.  </p>
-  <h3 id="design-extra-explanation-">Design (EXTRA EXPLANATION)</h3>
-  <h4 id="no-1-sketch">No. 1 Sketch</h4>
+  <h3>Design Description</h3>
+  <h4>No. 1 Sketch</h4>
   <p><img src="images/fin_colors.jpg" alt="colors" width="400" height="400" ></p>
   <p>Ruby Grapefuit: #F26968, color(242,105,104)<br>
   Limestone: #6CBF84, color(223,226,210)<br>
   Moss River: #323339, color(50,51,57)</p>
-  <h4 id="no-2-sketch">No. 2 Sketch</h4>
+  <h4>No. 2 Sketch</h4>
   <p><a href="https://www.pantone.com/color-of-the-year-2018-tools-for-designers">Color Selection PANTONE (2018)</a> </p>
-  <p><img src="images/color2018.png" alt="PANTONE" width="400" height="350" ></p>
-  <p>Purple: color(140, 109, 211)<br>
-  Peach: color(253, 122, 131)<br>
+  <p><img src="images/color2018.png" alt="PANTONE" width="400" height="300" ></p>
+  <p>Ultra Violet: color(140, 109, 211)<br>
+  Peach Bud: color(253, 122, 131)<br>
   Lettuce Green: color(53, 204, 153)</p>
+  <h3>Music Description</h3>
+  <h4>No. 1 Sketch</h4>
+  <p>Being inspired by Chagall&rsquo;s quote, Joey Pecoraro’s “Ask for Love” is used.</p>
+  <p><strong>&ldquo;<em>Art must be an expression of love or it is nothing</em>.&rdquo;</strong>by&nbsp;Marc Chagall<strong>&nbsp;</strong></p>
+  <p></p>
+  <h4>No. 2 Sketch</h4>
+  <p>Joey Pecoraro’s “Give Me Something” is used because the sketch is asking for a definition of art from the user. “Give me something (that defines art)!”</p>
   <h3 id="extension">Extension</h3>
   <p>Do you intend to extend a piece that you&#39;ve created throughout the semester? What elements are you adding or subtracting from the previous piece? How do these extensions/subtractions further develop the conceptual and interactive elements of your work?</p>
   <p>I am extending my piece from second and third piece. First of all, I am using text mining methods for the piece with R, Mallet, and LDA for exploratory data analysis. I used the results of the topic modeling. Secondly, I am using the pantone colors in the second sketch for the user to create their own art which I have used in both previous works. The elements that are adding to the previous works are the second sketch for user interaction for defining art and images of artists popping up when the mouse is clicked. </p>
   <p><img src="images/project3.png" alt="Previous Piece" width="900" height="500"></p>
-  <h3 id="drawing-or-sketch-of-extended-piece">Drawing or Sketch of Extended Piece</h3>
   <h3 id="technical-details">Technical Details</h3>
   <h4 id="no-1-sketch">No. 1 Sketch</h4>
   <ul>
